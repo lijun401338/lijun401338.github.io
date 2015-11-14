@@ -4,7 +4,7 @@ layout: index
 
 ## Contents
 
-### test：
+### test:
 {% for post in site.categories.test %}
     * [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
 {% endfor %}
