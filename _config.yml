@@ -6,12 +6,9 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: cocoo.li's blog
+title: cocoo's blog
 email: 8427003@qq.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: > www.css3.io css3.io cocoo cocoo.li blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.css3.io" # the base hostname & protocol for your site
 github_username:  8427003
