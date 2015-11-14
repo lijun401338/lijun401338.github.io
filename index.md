@@ -4,7 +4,7 @@ layout: index
 
 ## Contents
 
-- ## css
-{% for post in site.posts %}
-    - [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
+* ## test
+{% for post in site.categories.test %}
+    * [{{ post.title }}]({{ post.url | prepend: site.baseurl }})
 {% endfor %}
