@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-11-14 00:08:13 +0800
 categories: test
+permalink: none
 ---
 # atom-fecs
 
