@@ -8,7 +8,7 @@
 # Site settings
 title: cocoo's blog
 email: 8427003@qq.com
-description: > www.css3.io css3.io cocoo cocoo.li blog.
+description: www.css3.io css3.io cocoo cocoo.li blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.css3.io" # the base hostname & protocol for your site
 github_username:  8427003
