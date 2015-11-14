@@ -6,5 +6,5 @@ layout: index
 
 * test
 {% for post in site.categories.test %}
-    * [{{ post.title }}]({{ post.url | prepend: site.baseurl }})({{ page.date | date: "%F" }})
+    * [{{ post.title }}]({{ post.url | prepend: site.baseurl }})（{{ post.date | date: "%F" }}）
 {% endfor %}
