@@ -5,7 +5,7 @@ layout: default
     <h3>
         <span class="octicon octicon-book"></span>
         {{ page.title }}
-        <span class="float:right;font-weight:normal;">{{ post.date }}</span>
+        <span class="float:right;font-weight:normal;">{{ page.date | YYYY-MM-DD }}</span>
     </h3>
     <article class="markdown-body entry-content" itemprop="mainContentOfPage">
         {{ content }}
