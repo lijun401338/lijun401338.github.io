@@ -4,6 +4,7 @@ html,body {
 }
 body {
     background: grey url(../img/base.png) repeat;
+    background-color: grey !important;
 }
 .m-inner {
     min-height: 100%;
