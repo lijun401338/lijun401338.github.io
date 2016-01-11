@@ -3,7 +3,7 @@ html,body {
     height: 100%;
 }
 body {
-    background: url(../img/base.png) repeat;
+    background: grey url(../img/base.png) repeat;
 }
 .m-inner {
     min-height: 100%;
