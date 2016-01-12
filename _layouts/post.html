@@ -5,5 +5,8 @@ layout: default
     <article class="markdown-body entry-content" itemprop="mainContentOfPage">
         {{ content }}
     </article>
+    <div class="sign">
+        {{ page.date | date: "%F" }}
+    </div>
 </div>
 {% include disqus.html %}
