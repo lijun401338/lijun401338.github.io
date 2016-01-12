@@ -3,8 +3,8 @@ html,body {
     height: 100%;
 }
 body {
-    background: grey url(../img/base.png) repeat;
-    background-color: grey !important;
+    background: #eaeaea url(../img/base.png) repeat;
+    background-color: #eaeaea !important;
 }
 .m-inner {
     min-height: 100%;
