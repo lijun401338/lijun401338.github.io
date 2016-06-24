@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* notes
+* [notes](_posts/notes)
 
