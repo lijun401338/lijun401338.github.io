@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [notes](_posts/notes)
-   * css
+   * [css](_posts/notes/2016-06-24-css.md)
 
