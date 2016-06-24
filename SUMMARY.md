@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* 笔记
+* [笔记](_posts/notes)
 
