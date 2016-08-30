@@ -407,39 +407,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;">&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;</h1><pre><code>var data = [3, 12];
-var goal = 3;
+                                <h1 id="&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;">&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;</h1><pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> data = [<span class="hljs-number">3</span>, <span class="hljs-number">12</span>];
+<span class="hljs-keyword">var</span> goal = <span class="hljs-number">3</span>;
 
-function bSearch(goal, array, indexStart, indexEnd) {
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bSearch</span>(<span class="hljs-params">goal, array, indexStart, indexEnd</span>) </span>{
 
-    if (indexStart &gt; indexEnd) {
-        return -1;
+    <span class="hljs-keyword">if</span> (indexStart &gt; indexEnd) {
+        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
     }
 
-    // &#x8FD9;&#x91CC;&#x662F;&#x5173;&#x952E;, &#x4E0D;&#x80FD;(indexEnd+indexStart)/2 &#x6709;&#x6EA2;&#x51FA;&#x98CE;&#x9669;
-    var mid = indexStart + Math.floor((indexEnd - indexStart)/2, 10);
+    <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x662F;&#x5173;&#x952E;, &#x4E0D;&#x80FD;(indexEnd+indexStart)/2 &#x6709;&#x6EA2;&#x51FA;&#x98CE;&#x9669;</span>
+    <span class="hljs-keyword">var</span> mid = indexStart + <span class="hljs-built_in">Math</span>.floor((indexEnd - indexStart)/<span class="hljs-number">2</span>, <span class="hljs-number">10</span>);
 
-    if (array[mid] === goal) {
-        return mid;
+    <span class="hljs-keyword">if</span> (array[mid] === goal) {
+        <span class="hljs-keyword">return</span> mid;
     }
 
-     if (goal &gt; array[mid]) {
+     <span class="hljs-keyword">if</span> (goal &gt; array[mid]) {
 
-         // indexStart = mid+1 &#x5F88;&#x91CD;&#x8981;&#xFF0C; 
-         // &#x4E0D;&#x80FD;&#x662F;indexStart = mid,
-         // &#x7528;&#x4E8E;&#x5F00;&#x5934; indexStart &gt; indexEnd &#x8DF3;&#x51FA;&#x5224;&#x65AD;&#x3002;
-         indexStart = mid + 1; 
+         <span class="hljs-comment">// indexStart = mid+1 &#x5F88;&#x91CD;&#x8981;&#xFF0C; </span>
+         <span class="hljs-comment">// &#x4E0D;&#x80FD;&#x662F;indexStart = mid,</span>
+         <span class="hljs-comment">// &#x7528;&#x4E8E;&#x5F00;&#x5934; indexStart &gt; indexEnd &#x8DF3;&#x51FA;&#x5224;&#x65AD;&#x3002;</span>
+         indexStart = mid + <span class="hljs-number">1</span>; 
      }
-     else if (array[mid] &gt; goal) {
+     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (array[mid] &gt; goal) {
 
-         // mid-1 &#x540C;&#x4E0A;
-         indexEnd = mid - 1; 
+         <span class="hljs-comment">// mid-1 &#x540C;&#x4E0A;</span>
+         indexEnd = mid - <span class="hljs-number">1</span>; 
      }
 
-     return bSearch(goal, array, indexStart, indexEnd);
+     <span class="hljs-keyword">return</span> bSearch(goal, array, indexStart, indexEnd);
 }
 
-console.log(bSearch(goal, data, 0, data.length - 1));
+<span class="hljs-built_in">console</span>.log(bSearch(goal, data, <span class="hljs-number">0</span>, data.length - <span class="hljs-number">1</span>));
 
 </code></pre>
 
@@ -481,7 +482,7 @@ console.log(bSearch(goal, data, 0, data.length - 1));
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"javascript简单算法","level":"1.5.9","depth":2,"previous":{"title":"javascript继承的演变","level":"1.5.8","depth":2,"path":"javascript-extend-history.md","ref":"javascript-extend-history.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"duoshuo":{"short_name":"css3-io","theme":"default"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":"*"},"file":{"path":"javascript-algorithm.md","mtime":"2016-08-30T08:17:27.676Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-30T08:19:03.116Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"javascript简单算法","level":"1.5.9","depth":2,"previous":{"title":"javascript继承的演变","level":"1.5.8","depth":2,"path":"javascript-extend-history.md","ref":"javascript-extend-history.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","toggle-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"duoshuo":{"short_name":"css3-io","theme":"default"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":"*"},"file":{"path":"javascript-algorithm.md","mtime":"2016-08-30T08:21:32.181Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-30T08:23:18.286Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
