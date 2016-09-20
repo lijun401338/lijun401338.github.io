@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>如何排查bug | cocoo前端笔记</title>
+        <title>工具栈 | cocoo前端笔记</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -35,7 +35,7 @@
     
 
         
-<meta name="keywords" content="如何排查bug,cocoo前端笔记,www.css3.io">
+<meta name="keywords" content="工具栈,cocoo前端笔记,www.css3.io">
     
     
     
@@ -47,10 +47,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="h5-layout.html" />
     
-    
-    <link rel="prev" href="bigpipe-nginx-php.html" />
+    <link rel="prev" href="resume.html" />
     
 
 
@@ -113,7 +111,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.2" data-path="util-stack.html">
+        <li class="chapter active" data-level="1.1.2" data-path="util-stack.html">
             
                 <a href="util-stack.html">
             
@@ -364,7 +362,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.4" data-path="debug_bug.html">
+        <li class="chapter " data-level="1.6.4" data-path="debug_bug.html">
             
                 <a href="debug_bug.html">
             
@@ -477,7 +475,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >如何排查bug</a>
+        <a href="." >工具栈</a>
     </h1>
 </div>
 
@@ -489,7 +487,32 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x573A;&#x666F;&#x4E00;&#xFF1A;">&#x573A;&#x666F;&#x4E00;&#xFF1A;</h1><p>&#x4EE5;&#x524D;&#x8DDF;&#x8868;&#x54E5;&#x4E00;&#x8D77;&#x53BB;&#x4FEE;&#x8F66;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x8F66;&#x7684;&#x7A7A;&#x8C03;&#x574F;&#x4E86;&#x3002;&#x8FD9;&#x65F6;&#x5019;&#x4E00;&#x4E2A;&#x5E08;&#x5085;&#x542C;&#x6211;&#x4EEC;&#x53D9;&#x8FF0;&#x540E;&#xFF0C;&#x5C31;&#x76F4;&#x63A5;&#x5BF9;&#x7A7A;&#x8C03;&#x4F5C;&#x4E86;&#x68C0;&#x67E5;&#x3002;&#x68C0;&#x67E5;&#x4E86;&#x8BB8;&#x4E45;&#xFF0C;&#x6CA1;&#x53D1;&#x73B0;&#x6BDB;&#x75C5;&#x3002;</p><p>&#x7136;&#x540E;&#x53C8;&#x4E00;&#x4E2A;&#x5E08;&#x5085;&#x8DEF;&#x8FC7;&#xFF0C;&#x4FEE;&#x7A7A;&#x8C03;&#x7684;&#x5E08;&#x5085;&#x5C31;&#x53EB;&#x4ED6;&#x4E00;&#x8D77;&#x770B;&#x770B;&#xFF0C;&#x90A3;&#x5E08;&#x5085;&#x8BF4;&#x5148;&#x68C0;&#x67E5;&#x4FDD;&#x9669;&#x4E1D;&#x3002;&#x7ED3;&#x679C;..&#x679C;&#x7136;&#x662F;&#x4FDD;&#x9669;&#x4E1D;&#x65AD;&#x4E86;&#x3002;</p><p>&#x5728;&#x6211;&#x770B;&#x6765;&#x5F88;&#x8BE7;&#x5F02;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x5E08;&#x5085;&#x5E74;&#x9F84;&#x4E0A;&#x8981;&#x5927;&#x4E9B;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x5E94;&#x8BE5;&#x7ECF;&#x9A8C;&#x66F4;&#x4E30;&#x5BCC;&#xFF0C;&#x540E;&#x4E00;&#x4E2A;&#x5E08;&#x5085;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5E74;&#x8F7B;&#x5C0F;&#x4F19;&#x5B50;&#x3002;&#x8FD9;&#x4E2A;&#x5C0F;&#x4F19;&#x5B50;&#x5C45;&#x7136;&#x80FD;&#x4E00;&#x773C;&#x770B;&#x51FA;&#x6BDB;&#x75C5;&#x6240;&#x5728;&#x3002;&#x6211;&#x60F3;&#x8FD9;&#x5C0F;&#x4F19;&#x5B50;&#x80AF;&#x5B9A;&#x7ECF;&#x8FC7;&#x4E13;&#x4E1A;&#x7684;&#x57F9;&#x8BAD;&#x2026;</p><h1 id="&#x573A;&#x666F;&#x4E8C;&#xFF1A;">&#x573A;&#x666F;&#x4E8C;&#xFF1A;</h1><p>&#x4E00;php&#x7A0B;&#x5E8F;&#x51FA;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x7ED3;&#x679C;&#x51FA;&#x4E0D;&#x6765;&#x3002;&#x7136;&#x540E;&#x6211;&#x81EA;&#x4EE5;&#x4E3A;&#x5BF9;&#x7A0B;&#x5E8F;&#x719F;&#xFF0C;&#x5C31;&#x5728;&#x7A0B;&#x5E8F;&#x91CC;&#x52A0;&#x65AD;&#x70B9;&#x8C03;&#x8BD5;&#x554A;&#x8C03;&#x8BD5;&#x554A;&#xFF0C;&#x7EC8;&#x4E8E;&#x88AB;&#x6211;debug&#x51FA;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x3002;&#x81EA;&#x5DF1;&#x56DE;&#x60F3;&#xFF0C;&#x8FD9;tm&#x53BB;php&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x91CC;&#x9762;&#x770B;&#x770B;&#x4E0D;&#x5C31;&#x77E5;&#x9053;&#x4E86;&#x4E48;&#xFF1F;</p><h1 id="&#x573A;&#x666F;&#x4E09;&#xFF1A;">&#x573A;&#x666F;&#x4E09;&#xFF1A;</h1><p>&#x4E00;&#x54E5;&#x4EEC;&#x513F;&#x7A0B;&#x5E8F;&#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x6CA1;&#x95EE;&#x9898;&#xFF0C;&#x90E8;&#x7F72;&#x5230;&#x7EBF;&#x4E0A;&#x65F6;&#x51FA;&#x95EE;&#x9898;&#x4E86;&#x3002;&#x901A;&#x8FC7;&#x4E0D;&#x61C8;&#x7684;&#x52AA;&#x529B;&#xFF0C;&#x6709;&#x4E9B;&#x6000;&#x7591;&#x662F;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x4E0D;&#x592A;&#x786E;&#x5B9A;&#xFF0C;&#x6BD5;&#x7ADF;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x51FA;&#x95EE;&#x9898;&#x60C5;&#x51B5;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x81EA;&#x5DF1;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x6709;&#x95EE;&#x9898;&#x3002;&#x4E2D;&#x95F4;&#x8FD8;&#x770B;diff&#xFF0C;&#x770B;&#x662F;&#x5426;&#x6539;&#x9519;&#x4EE3;&#x7801;&#x4E86;&#x3002;&#x6700;&#x540E;&#x5B9E;&#x5728;&#x6349;&#x6025;&#x4E0A;&#x7EBF;&#xFF0C;&#x5C31;&#x8BF7;&#x6559;&#x4E86;&#x522B;&#x4EBA;&#x3002;&#x8FD9;&#x4E2A;&#x5E2E;&#x52A9;&#x6211;&#x7684;&#x54E5;&#x4EEC;&#x513F;&#xFF0C;&#x4E5F;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x5EFA;&#x8BAE;&#x6539;&#x4E0B;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x811A;&#x672C;&#xFF0C;&#x5C1D;&#x8BD5;&#x4E0B;&#x3002;&#x7ED3;&#x679C;&#x3002;&#x3002;&#x3002;&#x5C3C;&#x739B;&#xFF0C;&#x5C31;&#x662F;&#x6784;&#x5EFA;&#x6709;&#x95EE;&#x9898;&#x3002;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x6211;tm&#x4E3A;&#x4F55;&#x4E0D;&#x53BB;&#x770B;&#x6784;&#x5EFA;&#x65E5;&#x5FD7;&#xFF1F;&#x6700;&#x540E;&#x53BB;&#x6784;&#x5EFA;&#x65E5;&#x5FD7;&#x4E00;&#x770B;&#xFF0C;&#x679C;&#x7136;&#xFF0C;&#x62A5;&#x9519;&#x4E86;&#x3002;</p><h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1><p>&#x53BB;&#x68C0;&#x67E5;&#x4E00;&#x4E2A;bug&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x770B;&#x7684;&#x5E94;&#x8BE5;&#x662F;&#x201C;&#x5404;&#x79CD;&#x9636;&#x6BB5;&#x201D;&#x7684;&#x201C;&#x4EEA;&#x8868;&#x76D8;&#x201D;&#xFF0C;&#x6BD4;&#x5982;&#x6784;&#x5EFA;&#x65E5;&#x5FD7;&#xFF0C;&#x8BED;&#x6CD5;&#x65E5;&#x5FD7;&#xFF0C;&#x4FDD;&#x9669;&#x4E1D;&#x7B49;&#x7B49;&#x3002;&#x800C;&#x4E0D;&#x662F;&#x76F2;&#x76EE;&#x5730;&#x53BB;&#x6000;&#x7591;&#x81EA;&#x5DF1;&#x7684;&#x903B;&#x8F91;&#x51FA;&#x9519;&#x3002;</p>
+                                <h1 id="chrome-&#x63D2;&#x4EF6;">chrome &#x63D2;&#x4EF6;</h1><ul><li><p><a href="https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86%E6%89%80%E6%9C%89%E6%89%A9%E5%B1%95/niemebbfnfbjfojajlmnbiikmcpjkkja" target="_blank">&#x4E00;&#x952E;&#x7BA1;&#x7406;&#x6240;&#x6709;&#x63D2;&#x4EF6;</a> &#x7BA1;&#x7406;chrome&#x63D2;&#x4EF6;&#xFF0C;&#x5FEB;&#x901F;&#x5207;&#x6362;&#x5173;&#x95ED;&#x542F;&#x7528;&#x3002;</p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb" target="_blank">google&#x5212;&#x8BCD;&#x7FFB;&#x8BD1;</a> &#x8BFB;&#x82F1;&#x6587;&#x6587;&#x6863;&#x5FC5;&#x5907;&#xFF0C;&#x9700;&#x7FFB;&#x5899;</p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/nimbus-notes/haafigbapbpbpnmgcknnmilaaaimggpk" target="_blank">Nimbus Notes</a> &#x6EDA;&#x52A8;&#x622A;&#x56FE;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;</p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb" target="_blank">Adblock Plus</a> &#x52A0;&#x5F3A;&#x7248;&#xFF0C;&#x8BA9;&#x7F51;&#x9875;&#x6CA1;&#x6709;&#x5E7F;&#x544A;&#xFF0C;&#x770B;youtube&#x7B49;&#x723D;</p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/%E4%BA%8C%E7%BB%B4%E7%A0%81qr%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8qr-code-generato/pflgjjogbmmcmfhfcnlohagkablhbpmg" target="_blank">&#x4E8C;&#x7EF4;&#x7801;&#x751F;&#x6210;&#x5668;</a> &#x5C06;&#x6D4F;&#x89C8;&#x5668;&#x5730;&#x5740;&#x680F;&#x7684;url&#x4E00;&#x5EFA;&#x751F;&#x6210;&#x4E8C;&#x7EF4;&#x7801;&#xFF0C;&#x9002;&#x5408;h5&#x5F00;&#x53D1;</p></li>
+<li><p><a href="">JSON Formatter</a> &#x6B64;&#x7C7B;&#x8F6F;&#x4EF6;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x72EC;&#x7231;&#x8FD9;&#x4E00;&#x4E2A;&#xFF0C;&#x7B80;&#x5355;&#x5B9E;&#x7528;&#x3002;</p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank">octotree</a> github&#x751F;&#x6210;&#x5DE6;&#x4FA7;&#x5BFC;&#x822A;&#x6811;&#xFF0C;&#x65B9;&#x4FBF;&#x6587;&#x4EF6;&#x6D4F;&#x89C8;</p></li>
+<li><p><a href="https://chrome.google.com/webstore/detail/octolinker/jlmafbaeoofdegohdhinkhilhclaklkp" target="_blank">octolinker</a> github&#x4F9D;&#x8D56;&#x6A21;&#x5757;&#x8DF3;&#x8F6C;&#xFF0C;&#x65B9;&#x4FBF;&#x8BFB;&#x6E90;&#x7801;</p></li></ul>
+<hr><h1 id="mac-&#x76F8;&#x5173;">mac &#x76F8;&#x5173;</h1><ul><li><p><a href="https://www.alfredapp.com/" target="_blank">alfred</a> &#x4E0D;&#x89E3;&#x91CA;&#xFF0C;no1&#x5F53;&#x4EC1;&#x4E0D;&#x8BA9;&#xFF0C;&#x672C;&#x4EBA;&#x7528;&#x7684;&#x4E2A;&#x4EBA;&#x6536;&#x8D39;&#x7248;&#xFF0C;&#x552F;&#x4E00;&#x8BA9;&#x6211;&#x51FA;&#x94B1;&#x7684;&#x8F6F;&#x4EF6;&#x3002;</p></li>
+<li><p><a href="https://itunes.apple.com/us/app/dr.-cleaner-clean-disk-space/id921458519?mt=12" target="_blank">Dr. Cleaner</a> &#x6E05;&#x7406;&#x7CFB;&#x7EDF;&#x5783;&#x573E;&#xFF0C;&#x514D;&#x8D39;&#x8F6F;&#x4EF6;&#xFF0C;&#x597D;&#x7528;</p></li>
+<li><p><a href="https://github.com/justinfrankel/licecap" target="_blank">licecap</a> &#x5C4F;&#x5E55;&#x6355;&#x6349;&#xFF0C;&#x751F;&#x6210;gif&#x5C0F;&#x52A8;&#x753B;&#xFF0C;&#x5B9E;&#x7528;</p></li>
+<li><p><a href="https://github.com/keycastr/keycastr" target="_blank">keycastr</a> &#x663E;&#x793A;&#x6B63;&#x5728;&#x6572;&#x51FB;&#x7684;&#x952E;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#xFF0C;&#x5206;&#x4EAB;&#x89C6;&#x9891;&#x65F6;&#x53EF;&#x7528;</p></li>
+<li><p><a href="http://www.yingdev.com/projects/tickeys" target="_blank">tickeys</a> &#x8BA9;&#x666E;&#x901A;&#x952E;&#x76D8;&#x51FA;&#x53D1;&#x673A;&#x68B0;&#x952E;&#x76D8;&#x58F0;&#x97F3;&#xFF0C;&#x7528;&#x4E86;&#x540E;&#x4F1A;&#x6709;&#x629B;&#x5F03;&#x673A;&#x68B0;&#x952E;&#x76D8;&#x7684;&#x60F3;&#x6CD5;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x3002;</p></li></ul>
+<hr><h1 id="&#x5F00;&#x53D1;&#x76F8;&#x5173;">&#x5F00;&#x53D1;&#x76F8;&#x5173;</h1><ul><li><p>vim <a href="https://github.com/8427003/cocoVim/blob/master/simple/.vimrc" target="_blank">&#x4E2A;&#x4EBA;&#x914D;&#x7F6E;</a> &#x4F5C;&#x4E86;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x529F;&#x80FD;&#x4F18;&#x5316;&#x548C;&#x5B8C;&#x5584;&#xFF0C;&#x9002;&#x5408;&#x524D;&#x7AEF;&#x3002;</p></li>
+<li><p><a href="http://xclient.info/search/s/kaleidoscope/" target="_blank">kaleidoscope</a> diff&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x5939;, &#x6211;&#x7528;&#x8FC7;&#x7684;&#x6700;&#x597D;&#x7528;&#x7684;diff&#x3002;</p></li>
+<li><p><a href="http://xclient.info/s/xmind.html" target="_blank">xmind</a> &#x601D;&#x7EF4;&#x5BFC;&#x56FE;</p></li>
+<li><p><a href="https://www.genymotion.com/" target="_blank">Genymotion</a> &#x624B;&#x673A;&#x6A21;&#x62DF;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x6700;&#x5FEB;&#x7684;</p></li>
+<li><p><a href="https://www.sourcetreeapp.com/" target="_blank">sourceTree</a> &#x6700;&#x597D;&#x7528;&#x7684;git&#x56FE;&#x50CF;&#x754C;&#x9762;&#x5BA2;&#x6237;&#x7AEF;</p></li>
+<li><p><a href="http://oldj.github.io/SwitchHosts/" target="_blank">SwitchHosts</a> &#x5207;&#x6362;hosts&#xFF0C;&#x53EF;&#x9884;&#x8BBE;&#x7F6E;&#x591A;&#x79CD;&#x65B9;&#x6848;&#xFF0C;&#x597D;&#x7528;</p></li>
+<li><p><a href="https://www.jetbrains.com/webstorm/" target="_blank">webstrom</a> debug&#x4EE3;&#x7801;&#x65F6;&#x7528;&#xFF0C;&#x68C0;&#x6D4B;&#x7F16;&#x7801;&#x65F6;&#x7528;&#xFF0C;&#x5E73;&#x65F6;&#x4E0D;&#x7528;</p></li></ul>
+<hr><h1 id="&#x7FFB;&#x5899;">&#x7FFB;&#x5899;</h1><ul><li><p><a href="https://bandwagonhost.com/" target="_blank">&#x7248;&#x74E6;&#x5DE5;vps</a> &#x4E00;&#x5E74;10&#x51E0;&#x7F8E;&#x5143;&#xFF0C;&#x672C;&#x4EBA;&#x73B0;&#x5728;&#x7528;&#x7684;&#xFF0C;&#x7A33;&#x5B9A;&#x670D;&#x5F79;1&#x5E74;&#x4E86;&#xFF0C;&#x901F;&#x5EA6;&#x4E00;&#x822C;&#x80FD;&#x770B;youtube 720p&#x3002;&#x4F46;&#x662F;&#x6700;&#x8FD1;&#x5C01;&#x6740;&#x4E86;pptp&#x7B49;&#x7AEF;&#x53E3;&#x670D;&#x52A1;&#xFF0C;&#x53EA;&#x80FD;&#x652F;&#x6301;shadowsocks&#xFF0C;&#x548C;openvpn&#x4E86;&#x3002;</p></li>
+<li><p><a href="https://www.kvmla.com/" target="_blank">kvmla</a> &#x9999;&#x6E2F;vps&#xFF0C;&#x6709;&#x540C;&#x4E8B;&#x4E70;&#x8BF4;&#x7A33;&#x5B9A;&#x670D;&#x5F79;1.5&#x5E74;&#x5DF2;&#x7ECF;&#xFF0C;&#x901F;&#x5EA6;&#x5FEB;&#x3002;</p></li>
+<li><p><a href="https://www.yuntibit.com/" target="_blank">&#x4E91;&#x68AF;vpn</a> ping&#x4E86;&#x4E0B;&#x53D1;&#x73B0;&#x9999;&#x6E2F;&#x670D;&#x52A1;&#x5668;&#x5C45;&#x7136;&#x662F;rackspace&#xFF08;&#x56FD;&#x9645;4&#x5927;vps&#x5546;&#x4E4B;&#x4E00;&#xFF09;&#x4E70;&#x7684;&#x3002;</p></li></ul>
+<hr><h1 id="&#x5E38;&#x53BB;&#x7F51;&#x7AD9;">&#x5E38;&#x53BB;&#x7F51;&#x7AD9;</h1><ul><li><a href="https://news.ycombinator.com/" target="_blank">Hacker News</a> &#x5F88;&#x591A;&#x725B;&#x903C;&#x9879;&#x76EE;&#xFF0C;&#x521B;&#x4E1A;&#x9879;&#x76EE;&#xFF0C;&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x770B;&#x7F51;&#x7AD9;
+</li></ul>
+
                                 
                                 </section>
                             
@@ -500,14 +523,10 @@
 
             
                 
-                <a href="bigpipe-nginx-php.html" class="navigation navigation-prev " aria-label="Previous page: bigpipe-php+nginx实战篇">
+                <a href="resume.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 简历">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="h5-layout.html" class="navigation navigation-next " aria-label="Next page: h5适配">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -516,7 +535,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"如何排查bug","level":"1.6.4","depth":2,"next":{"title":"h5适配","level":"1.6.5","depth":2,"path":"h5-layout.md","ref":"h5-layout.md","articles":[]},"previous":{"title":"bigpipe-php+nginx实战篇","level":"1.6.3","depth":2,"path":"bigpipe-nginx-php.md","ref":"bigpipe-nginx-php.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"debug_bug.md","mtime":"2016-09-20T04:12:47.729Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-20T04:14:47.324Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"工具栈","level":"1.1.2","depth":2,"next":{"title":"Linux","level":"1.2","depth":1,"ref":"","articles":[{"title":"linux文件权限","level":"1.2.1","depth":2,"path":"linux-file-permissions.md","ref":"linux-file-permissions.md","articles":[]},{"title":"user相关","level":"1.2.2","depth":2,"path":"linux-cmd-user.md","ref":"linux-cmd-user.md","articles":[]}]},"previous":{"title":"简历","level":"1.1.1","depth":2,"path":"resume.md","ref":"resume.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"util-stack.md","mtime":"2016-09-20T04:12:47.729Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-20T04:14:47.324Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
