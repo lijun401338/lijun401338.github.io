@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>javascript继承的演变 | cocoo前端笔记</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>javascript继承的演变 | cocoo前端笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -460,6 +460,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Rect服务端渲染
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="commonjs-vs-commonjs2.html">
+            
+                <a href="commonjs-vs-commonjs2.html">
+            
+                    
+                    commonjs vs commonjs2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -502,7 +534,8 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="1&#x6700;&#x7B80;&#x5355;&#x539F;&#x578B;&#x7EE7;&#x627F;">1.&#x6700;&#x7B80;&#x5355;&#x539F;&#x578B;&#x7EE7;&#x627F;</h1><pre><code class="lang-javascript">
+                                <h1 id="1&#x6700;&#x7B80;&#x5355;&#x539F;&#x578B;&#x7EE7;&#x627F;">1.&#x6700;&#x7B80;&#x5355;&#x539F;&#x578B;&#x7EE7;&#x627F;</h1>
+<pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Super</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&apos;name&apos;</span>;
     <span class="hljs-keyword">this</span>.colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;black&apos;</span>]
@@ -513,12 +546,15 @@ Super.prototype.getName = <span class="hljs-function"><span class="hljs-keyword"
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Sub</span> (<span class="hljs-params"></span>) </span>{
 }
-Sub.prototype = <span class="hljs-keyword">new</span> Super();</code></pre>
-<p>&#x7F3A;&#x70B9;&#xFF1A;</p><ol><li>&#x4E0D;&#x80FD;&#x5411;Super&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;
-</li>
-<li>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x88AB;&#x5B9E;&#x4F8B;&#x5171;&#x4EAB;&#x3002;
-</li></ol>
-<h1 id="2&#x501F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;&#x4F2A;&#x9020;&#x5BF9;&#x8C61;&#x3001;&#x7ECF;&#x5178;&#x7EE7;&#x627F;&#xFF09;">2.&#x501F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;&#x4F2A;&#x9020;&#x5BF9;&#x8C61;&#x3001;&#x7ECF;&#x5178;&#x7EE7;&#x627F;&#xFF09;</h1><pre><code class="lang-javascript">
+Sub.prototype = <span class="hljs-keyword">new</span> Super();
+</code></pre>
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x4E0D;&#x80FD;&#x5411;Super&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;</li>
+<li>&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x88AB;&#x5B9E;&#x4F8B;&#x5171;&#x4EAB;&#x3002;</li>
+</ol>
+<h1 id="2&#x501F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;&#x4F2A;&#x9020;&#x5BF9;&#x8C61;&#x3001;&#x7ECF;&#x5178;&#x7EE7;&#x627F;&#xFF09;">2.&#x501F;&#x7528;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF08;&#x4F2A;&#x9020;&#x5BF9;&#x8C61;&#x3001;&#x7ECF;&#x5178;&#x7EE7;&#x627F;&#xFF09;</h1>
+<pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Super</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&apos;name&apos;</span>;
     <span class="hljs-keyword">this</span>.getAge = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
@@ -533,13 +569,14 @@ Super.prototype.getName = <span class="hljs-function"><span class="hljs-keyword"
     Super.call(<span class="hljs-keyword">this</span>);
 }
 </code></pre>
-<p>&#x7F3A;&#x70B9;&#xFF1A;</p><ol><li>&#x8981;&#x6C42;&#x6240;&#x6709;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;,&#x5982;&#x540C;Super&#x4E2D;&#x7684;<code>getAge</code>&#x65B9;&#x6CD5;&#x3002;
-</li>
-<li>&#x51FD;&#x6570;&#x88AB;&#x91CD;&#x590D;&#x521B;&#x5EFA;&#x3002;
-</li>
-<li>Sub&#x4E5F;&#x4E0D;&#x80FD;&#x8C03;&#x7528;Super&#x539F;&#x578B;&#x91CC;&#x7684;&#x65B9;&#x6CD5;.
-</li></ol>
-<h1 id="3&#x7EC4;&#x5408;&#x7EE7;&#x627F;">3.&#x7EC4;&#x5408;&#x7EE7;&#x627F;</h1><pre><code class="lang-javascript">
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x8981;&#x6C42;&#x6240;&#x6709;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x5728;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5B9A;&#x4E49;,&#x5982;&#x540C;Super&#x4E2D;&#x7684;<code>getAge</code>&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x51FD;&#x6570;&#x88AB;&#x91CD;&#x590D;&#x521B;&#x5EFA;&#x3002;</li>
+<li>Sub&#x4E5F;&#x4E0D;&#x80FD;&#x8C03;&#x7528;Super&#x539F;&#x578B;&#x91CC;&#x7684;&#x65B9;&#x6CD5;.</li>
+</ol>
+<h1 id="3&#x7EC4;&#x5408;&#x7EE7;&#x627F;">3.&#x7EC4;&#x5408;&#x7EE7;&#x627F;</h1>
+<pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Super</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">this</span>.name = <span class="hljs-string">&apos;name&apos;</span>;
     <span class="hljs-keyword">this</span>.colors = [<span class="hljs-string">&apos;red&apos;</span>, <span class="hljs-string">&apos;black&apos;</span>];
@@ -553,9 +590,14 @@ Super.prototype.getName = <span class="hljs-function"><span class="hljs-keyword"
 }
 Sub.prototype = <span class="hljs-keyword">new</span> Super();
 </code></pre>
-<p>&#x4F18;&#x70B9;&#xFF1A; &#x89E3;&#x51B3;&#x4E86;&#x5C5E;&#x6027;&#x4E3A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x65F6;&#x5B9E;&#x4F8B;&#x662F;&#x5171;&#x4EAB;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x539F;&#x578B;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#x88AB;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#x503C;&#x8986;&#x76D6;&#xFF09;&#xFF0C;&#x5B50;&#x7C7B;&#x4E5F;&#x80FD;&#x7528;&#x4F7F;&#x7528;&#x539F;&#x578B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x3002;</p><p>&#x7F3A;&#x70B9;&#xFF1A;</p><ol><li>Super&#x88AB;&#x8C03;&#x7528;&#x91CD;&#x590D;&#x8C03;&#x7528;2&#x6B21;
-</li></ol>
-<hr><h1 id="4&#x539F;&#x578B;&#x5F0F;&#x7EE7;&#x627F;&#xFF08;&#x9053;&#x683C;&#x62C9;&#x65AF;&#xFF09;">4.&#x539F;&#x578B;&#x5F0F;&#x7EE7;&#x627F;&#xFF08;&#x9053;&#x683C;&#x62C9;&#x65AF;&#xFF09;</h1><pre><code class="lang-javascript">
+<p>&#x4F18;&#x70B9;&#xFF1A; &#x89E3;&#x51B3;&#x4E86;&#x5C5E;&#x6027;&#x4E3A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x65F6;&#x5B9E;&#x4F8B;&#x662F;&#x5171;&#x4EAB;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x539F;&#x578B;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#x88AB;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x5F15;&#x7528;&#x503C;&#x8986;&#x76D6;&#xFF09;&#xFF0C;&#x5B50;&#x7C7B;&#x4E5F;&#x80FD;&#x7528;&#x4F7F;&#x7528;&#x539F;&#x578B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x3002;</p>
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>Super&#x88AB;&#x8C03;&#x7528;&#x91CD;&#x590D;&#x8C03;&#x7528;2&#x6B21;</li>
+</ol>
+<hr>
+<h1 id="4&#x539F;&#x578B;&#x5F0F;&#x7EE7;&#x627F;&#xFF08;&#x9053;&#x683C;&#x62C9;&#x65AF;&#xFF09;">4.&#x539F;&#x578B;&#x5F0F;&#x7EE7;&#x627F;&#xFF08;&#x9053;&#x683C;&#x62C9;&#x65AF;&#xFF09;</h1>
+<pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">object</span> (<span class="hljs-params">o</span>) </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span> (<span class="hljs-params"></span>) </span>{}
     F.prototype = o;
@@ -576,10 +618,16 @@ person2.name = <span class="hljs-string">&apos;name2&apos;</span>;
 person2.frends.push(<span class="hljs-string">&apos;D&apos;</span>);
 
 <span class="hljs-comment">// A B C D</span>
-<span class="hljs-built_in">console</span>.log(person.frends);</code></pre>
-<p>&#x9002;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x4E0D;&#x5FC5;&#x5174;&#x5E08;&#x52A8;&#x4F17;&#x521B;&#x5EFA;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x662F;&#x60F3;&#x8BA9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4FDD;&#x6301;&#x7C7B;&#x4F3C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x3002;</p><p>&#x8BF4;&#x660E;&#xFF1A; &#x5728;ECMAScript5&#x5F97;&#x5230;&#x89C4;&#x8303; <code>Object.create()</code></p><p>&#x7F3A;&#x70B9;&#xFF1A;</p><ol><li>&#x4F9D;&#x7136;&#x5B58;&#x5728;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x5171;&#x4EAB;&#x95EE;&#x9898;&#x3002;
-</li></ol>
-<h1 id="5-&#x5BC4;&#x751F;&#x5F0F;&#x7EE7;&#x627F;">5. &#x5BC4;&#x751F;&#x5F0F;&#x7EE7;&#x627F;</h1><pre><code class="lang-javascript">
+<span class="hljs-built_in">console</span>.log(person.frends);
+</code></pre>
+<p>&#x9002;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x4E0D;&#x5FC5;&#x5174;&#x5E08;&#x52A8;&#x4F17;&#x521B;&#x5EFA;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x662F;&#x60F3;&#x8BA9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4FDD;&#x6301;&#x7C7B;&#x4F3C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x3002;</p>
+<p>&#x8BF4;&#x660E;&#xFF1A; &#x5728;ECMAScript5&#x5F97;&#x5230;&#x89C4;&#x8303; <code>Object.create()</code></p>
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x4F9D;&#x7136;&#x5B58;&#x5728;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x5171;&#x4EAB;&#x95EE;&#x9898;&#x3002;</li>
+</ol>
+<h1 id="5-&#x5BC4;&#x751F;&#x5F0F;&#x7EE7;&#x627F;">5. &#x5BC4;&#x751F;&#x5F0F;&#x7EE7;&#x627F;</h1>
+<pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">object</span> (<span class="hljs-params">o</span>) </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span> (<span class="hljs-params"></span>) </span>{}
     F.prototype = o;
@@ -609,8 +657,11 @@ person1.sayHi();
 <span class="hljs-keyword">var</span> person2 = createAnother(person);
 
 <span class="hljs-comment">// &quot;Shelby&quot;, &quot;Court&quot;, &quot;Van&quot;, &quot;person1&quot;</span>
-<span class="hljs-built_in">console</span>.log(person2.friends);</code></pre>
-<p>&#x7F3A;&#x70B9;&#xFF1A;&#x51FD;&#x6570;<code>sayHi()</code>&#x4F9D;&#x7136;&#x88AB;&#x91CD;&#x590D;&#x521B;&#x5EFA;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x4F9D;&#x7136;&#x5B58;&#x5728;&#x5171;&#x4EAB;&#x95EE;&#x9898;&#x3002;</p><h1 id="6-&#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x5F0F;&#x7EE7;&#x627F;">6. &#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x5F0F;&#x7EE7;&#x627F;</h1><pre><code class="lang-javascript">
+<span class="hljs-built_in">console</span>.log(person2.friends);
+</code></pre>
+<p>&#x7F3A;&#x70B9;&#xFF1A;&#x51FD;&#x6570;<code>sayHi()</code>&#x4F9D;&#x7136;&#x88AB;&#x91CD;&#x590D;&#x521B;&#x5EFA;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x5C5E;&#x6027;&#x4F9D;&#x7136;&#x5B58;&#x5728;&#x5171;&#x4EAB;&#x95EE;&#x9898;&#x3002;</p>
+<h1 id="6-&#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x5F0F;&#x7EE7;&#x627F;">6. &#x5BC4;&#x751F;&#x7EC4;&#x5408;&#x5F0F;&#x7EE7;&#x627F;</h1>
+<pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">object</span> (<span class="hljs-params">o</span>) </span>{
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span> (<span class="hljs-params"></span>) </span>{}
     F.prototype = o;
@@ -634,6 +685,7 @@ person1.sayHi();
 inheritPrototype(Sub, Super);
 </code></pre>
 <p>&#x8BF4;&#x660E;&#xFF1A;&#x89E3;&#x51B3;&#x4E86;&#x5F15;&#x7528;&#x5C5E;&#x6027;&#x5171;&#x4EAB;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x6700;&#x7406;&#x60F3;&#x7684;&#x7EE7;&#x627F;&#x8303;&#x5F0F;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -660,7 +712,7 @@ inheritPrototype(Sub, Super);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"javascript继承的演变","level":"1.6.8","depth":2,"next":{"title":"javascript简单算法","level":"1.6.9","depth":2,"path":"javascript-algorithm.md","ref":"javascript-algorithm.md","articles":[]},"previous":{"title":"如何理解css的BFC抽象概念","level":"1.6.7","depth":2,"path":"bfc-css.md","ref":"bfc-css.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"javascript-extend-history.md","mtime":"2016-09-20T16:23:45.966Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-20T16:25:38.874Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"javascript继承的演变","level":"1.6.8","depth":2,"next":{"title":"javascript简单算法","level":"1.6.9","depth":2,"path":"javascript-algorithm.md","ref":"javascript-algorithm.md","articles":[]},"previous":{"title":"如何理解css的BFC抽象概念","level":"1.6.7","depth":2,"path":"bfc-css.md","ref":"bfc-css.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"javascript-extend-history.md","mtime":"2016-11-06T13:52:01.027Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-06T13:54:01.159Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

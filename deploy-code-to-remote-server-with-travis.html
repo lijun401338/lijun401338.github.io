@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>通过travis部署代码到远程服务器 | cocoo前端笔记</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>通过travis部署代码到远程服务器 | cocoo前端笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -460,6 +460,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Rect服务端渲染
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="commonjs-vs-commonjs2.html">
+            
+                <a href="commonjs-vs-commonjs2.html">
+            
+                    
+                    commonjs vs commonjs2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -502,24 +534,45 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h1><p>&#x6211;&#x7684;blog&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x5728;github&#x4E0A;&#xFF0C;&#x60F3;&#x901A;&#x8FC7;<a href="https://travis-ci.org" target="_blank">travis</a>&#x5728;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x65F6;&#x81EA;&#x52A8;&#x53D1;&#x5E03;&#x5230;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x3002;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x5229;&#x7528;travis&#x6301;&#x7EED;&#x96C6;&#x6210;&#x6765;&#x5B8C;&#x6210;&#x6B64;&#x9879;&#x5DE5;&#x4F5C;&#x3002;</p><h1 id="&#x90E8;&#x7F72;&#x811A;&#x672C;">&#x90E8;&#x7F72;&#x811A;&#x672C;</h1><pre><code>sshpass -p woshimima scp -P 29134 -o stricthostkeychecking=no -r ./_book/* root@www.css3.io:/nginx/html/
-</code></pre>
-<p><strong>&#x6301;&#x7EED;&#x96C6;&#x6210;&#x81EA;&#x52A8;&#x5316;&#x8FD0;&#x884C;&#x811A;&#x672C;&#x6700;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x811A;&#x672C;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x754C;&#x9762;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x4E0D;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x8F93;&#x5165;yes&#x56DE;&#x8F66;&#x952E;&#x786E;&#x8BA4;&#x3002;&#x800C;&#x6211;&#x4EEC;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E9B;shell&#x547D;&#x4EE4;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x4EA4;&#x4E92;&#x7684;&#xFF0C;&#x6BD4;&#x5982;scp&#x3001;ssh &#x662F;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x5176;&#x5B83;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x7C7B;&#x95EE;&#x9898;&#x3002;</strong></p><ol><li><p>sshpass &#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;scp&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x53EF;&#x4EE5;&#x5C06;&#x5BC6;&#x7801;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x5316;&#x3002;</p><p><code>sshpass -p woshimima</code> <strong>-p</strong>&#x53C2;&#x6570;&#x662F;&#x6307;&#x5B9A;&#x5BC6;&#x7801;&#x4E3A;<code>woshimima</code></p></li>
-<li><p><code>scp -o stricthostkeychecking=no</code> &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x7981;&#x7528; SSH &#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x516C;&#x94A5;&#x68C0;&#x67E5;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x7528;ssh&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x9646;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x63D0;&#x793A;&#x662F;&#x5426;&#x9700;&#x8981;&#x5BFC;&#x5165;&#x670D;&#x52A1;&#x5668;&#x516C;&#x94A5;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x4F1A;&#x662F;&#x8FD9;&#x6837;</p><p><em>The authenticity of host &apos;192.168.0.110 (192.168.0.110)&apos; can&apos;t be established. RSA key fingerprint is a3:ca:ad:95:a1:45:d2:57:3a:e9:e7:75:a8:4c:1f:9f. Are you sure you want to continue connecting (yes/no)?</em></p><p>&#x6211;&#x4EEC;&#x8BF4;&#x4E86;&#xFF0C;&#x662F;&#x6CA1;&#x6709;&#x4EA4;&#x4E92;&#x754C;&#x9762;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x811A;&#x672C;&#x5C06;&#x4F1A;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x6267;&#x884C;&#xFF08;&#x8FD9;&#x91CC;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x573A;&#x666F;&#x662F;&#xFF0C;&#x770B;&#x5230;travis&#x65E5;&#x5FD7;&#x811A;&#x672C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x662F;&#x811A;&#x672C;&#x6CA1;&#x6709;&#x5DE5;&#x4F5C;&#xFF09;&#x3002;&#x9488;&#x5BF9;ssh&#x7981;&#x7528;&#x516C;&#x5319;&#x68C0;&#x67E5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;<a href="http://www.worldhello.net/2010/04/08/1026.html" target="_blank">http://www.worldhello.net/2010/04/08/1026.html</a></p></li>
-<li><p>&#x66F4;&#x591A;scp&#x547D;&#x4EE4;&#x7684;&#x8BE6;&#x7EC6;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x53C2;&#x6570;<strong> scp -r ./_book/*</strong>&#x4EE3;&#x8868;&#x53D1;&#x9001;_book&#x4E0B;&#x6587;&#x4EF6;&#x5305;&#x62EC;&#x5B50;&#x76EE;&#x5F55;&#x5C31;&#x4E0D;&#x4F5C;&#x66F4;&#x591A;&#x8BA8;&#x8BBA;&#x3002;</p></li></ol>
-<h1 id="&#x5B89;&#x5168;&#x95EE;&#x9898;">&#x5B89;&#x5168;&#x95EE;&#x9898;</h1><p>travis&#x9879;&#x76EE;&#x662F;&#x516C;&#x5F00;&#x7684;&#xFF08;&#x9664;&#x975E;&#x4F60;&#x82B1;&#x94B1;&#x4E70;&#x79C1;&#x6709;&#x7684;&#xFF09;&#xFF0C;&#x4EFB;&#x4F55;&#x4EBA;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x516C;&#x5F00;&#x9879;&#x76EE;&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x811A;&#x672C;&#x4F1A;&#x66B4;&#x9732;&#x670D;&#x52A1;&#x5668;ssh&#x5BC6;&#x7801;&#x3002;&#x597D;&#x5728;travis&#x63D0;&#x4F9B;&#x4E86;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;ssh&#x5BC6;&#x7801;&#xFF0C;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x7AEF;&#x53E3;&#x7B49;&#x52A0;&#x5BC6;&#x3002;
-&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x544A;&#x8BC9;travis&#x5728;&#x4F7F;&#x7528;sshpass&#x65F6;&#x4ECE;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x8BFB;&#x53D6;&#x53D8;&#x91CF;&#x800C;&#x975E;&#x547D;&#x4EE4;&#x884C;&#x3002;&#x5229;&#x7528;<a href="https://github.com/travis-ci/travis.rb" target="_blank"><code>travis</code> command line tool</a>&#x589E;&#x52A0;&#x52A0;&#x5BC6;&#x53D8;&#x91CF;&#x3002;</p><p>&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x5728;&#x672C;&#x673A;&#x5B89;&#x88C5;&#x4E86;<strong><code>travis</code> command line tool</strong></p><pre><code>travis encrypt DEPLOY_USER=&lt;csun-username&gt; 
-travis encrypt DEPLOY_PASS=&lt;csun-password&gt; 
-</code></pre>
-<p>&#x5728;&#x6709;<code>travis.yml</code> &#x6587;&#x4EF6;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x8FD0;&#x884C;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;travis&#x4F1A;&#x81EA;&#x52A8;&#x6CE8;&#x5165;<code>global</code>&#x8282;&#x70B9;&#x5230;<code>travis.yml</code> &#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x662F;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x5F97;&#x5230;&#x503C;&#x540E;copy&#x52A0;&#x5BC6;&#x540E;&#x7684;&#x503C;&#x8FDB;<code>travis.yml</code>&#x6587;&#x4EF6;&#x3002;<code>travis.yml</code>&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p><pre><code>env: 
+                                <h1 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h1>
+<p>&#x6211;&#x7684;blog&#x4EE3;&#x7801;&#x6258;&#x7BA1;&#x5728;github&#x4E0A;&#xFF0C;&#x60F3;&#x901A;&#x8FC7;<a href="https://travis-ci.org" target="_blank">travis</a>&#x5728;&#x63D0;&#x4EA4;&#x4EE3;&#x7801;&#x65F6;&#x81EA;&#x52A8;&#x53D1;&#x5E03;&#x5230;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x3002;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x5229;&#x7528;travis&#x6301;&#x7EED;&#x96C6;&#x6210;&#x6765;&#x5B8C;&#x6210;&#x6B64;&#x9879;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h1 id="&#x90E8;&#x7F72;&#x811A;&#x672C;">&#x90E8;&#x7F72;&#x811A;&#x672C;</h1>
+<pre><code>sshpass -p woshimima scp -P 29134 -o stricthostkeychecking=no -r ./_book/* root@www.css3.io:/nginx/html/
+</code></pre><p><strong>&#x6301;&#x7EED;&#x96C6;&#x6210;&#x81EA;&#x52A8;&#x5316;&#x8FD0;&#x884C;&#x811A;&#x672C;&#x6700;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x5728;&#x4E8E;&#x811A;&#x672C;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x662F;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x754C;&#x9762;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x4E0D;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x4E0D;&#x53EF;&#x4EE5;&#x8F93;&#x5165;yes&#x56DE;&#x8F66;&#x952E;&#x786E;&#x8BA4;&#x3002;&#x800C;&#x6211;&#x4EEC;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E9B;shell&#x547D;&#x4EE4;&#x662F;&#x6709;&#x4E00;&#x4E9B;&#x4EA4;&#x4E92;&#x7684;&#xFF0C;&#x6BD4;&#x5982;scp&#x3001;ssh &#x662F;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x5176;&#x5B83;&#x65B9;&#x5F0F;&#x6765;&#x89E3;&#x51B3;&#x8FD9;&#x4E00;&#x7C7B;&#x95EE;&#x9898;&#x3002;</strong></p>
+<ol>
+<li><p>sshpass &#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF0C;scp&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x53EF;&#x4EE5;&#x5C06;&#x5BC6;&#x7801;&#x9884;&#x5148;&#x8BBE;&#x7F6E;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x5316;&#x3002;</p>
+<p> <code>sshpass -p woshimima</code> <strong>-p</strong>&#x53C2;&#x6570;&#x662F;&#x6307;&#x5B9A;&#x5BC6;&#x7801;&#x4E3A;<code>woshimima</code></p>
+</li>
+<li><p><code>scp -o stricthostkeychecking=no</code> &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x7981;&#x7528; SSH &#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x516C;&#x94A5;&#x68C0;&#x67E5;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x7528;ssh&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x9646;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x63D0;&#x793A;&#x662F;&#x5426;&#x9700;&#x8981;&#x5BFC;&#x5165;&#x670D;&#x52A1;&#x5668;&#x516C;&#x94A5;&#xFF0C;&#x770B;&#x8D77;&#x6765;&#x4F1A;&#x662F;&#x8FD9;&#x6837;</p>
+<p> <em>The authenticity of host &apos;192.168.0.110 (192.168.0.110)&apos; can&apos;t be established. RSA key fingerprint is a3:ca:ad:95:a1:45:d2:57:3a:e9:e7:75:a8:4c:1f:9f. Are you sure you want to continue connecting (yes/no)?</em></p>
+<p> &#x6211;&#x4EEC;&#x8BF4;&#x4E86;&#xFF0C;&#x662F;&#x6CA1;&#x6709;&#x4EA4;&#x4E92;&#x754C;&#x9762;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x811A;&#x672C;&#x5C06;&#x4F1A;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x6267;&#x884C;&#xFF08;&#x8FD9;&#x91CC;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x573A;&#x666F;&#x662F;&#xFF0C;&#x770B;&#x5230;travis&#x65E5;&#x5FD7;&#x811A;&#x672C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x662F;&#x811A;&#x672C;&#x6CA1;&#x6709;&#x5DE5;&#x4F5C;&#xFF09;&#x3002;&#x9488;&#x5BF9;ssh&#x7981;&#x7528;&#x516C;&#x5319;&#x68C0;&#x67E5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;<a href="http://www.worldhello.net/2010/04/08/1026.html" target="_blank">http://www.worldhello.net/2010/04/08/1026.html</a></p>
+</li>
+<li><p>&#x66F4;&#x591A;scp&#x547D;&#x4EE4;&#x7684;&#x8BE6;&#x7EC6;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x53C2;&#x6570;<strong> scp -r ./_book/*</strong>&#x4EE3;&#x8868;&#x53D1;&#x9001;_book&#x4E0B;&#x6587;&#x4EF6;&#x5305;&#x62EC;&#x5B50;&#x76EE;&#x5F55;&#x5C31;&#x4E0D;&#x4F5C;&#x66F4;&#x591A;&#x8BA8;&#x8BBA;&#x3002;</p>
+</li>
+</ol>
+<h1 id="&#x5B89;&#x5168;&#x95EE;&#x9898;">&#x5B89;&#x5168;&#x95EE;&#x9898;</h1>
+<p>travis&#x9879;&#x76EE;&#x662F;&#x516C;&#x5F00;&#x7684;&#xFF08;&#x9664;&#x975E;&#x4F60;&#x82B1;&#x94B1;&#x4E70;&#x79C1;&#x6709;&#x7684;&#xFF09;&#xFF0C;&#x4EFB;&#x4F55;&#x4EBA;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x516C;&#x5F00;&#x9879;&#x76EE;&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x811A;&#x672C;&#x4F1A;&#x66B4;&#x9732;&#x670D;&#x52A1;&#x5668;ssh&#x5BC6;&#x7801;&#x3002;&#x597D;&#x5728;travis&#x63D0;&#x4F9B;&#x4E86;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;ssh&#x5BC6;&#x7801;&#xFF0C;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x7AEF;&#x53E3;&#x7B49;&#x52A0;&#x5BC6;&#x3002;
+&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x544A;&#x8BC9;travis&#x5728;&#x4F7F;&#x7528;sshpass&#x65F6;&#x4ECE;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x8BFB;&#x53D6;&#x53D8;&#x91CF;&#x800C;&#x975E;&#x547D;&#x4EE4;&#x884C;&#x3002;&#x5229;&#x7528;<a href="https://github.com/travis-ci/travis.rb" target="_blank"><code>travis</code> command line tool</a>&#x589E;&#x52A0;&#x52A0;&#x5BC6;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x5728;&#x672C;&#x673A;&#x5B89;&#x88C5;&#x4E86;<strong><code>travis</code> command line tool</strong></p>
+<pre><code>travis encrypt DEPLOY_USER=&lt;csun-username&gt; 
+travis encrypt DEPLOY_PASS=&lt;csun-password&gt;
+</code></pre><p>&#x5728;&#x6709;<code>travis.yml</code> &#x6587;&#x4EF6;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x8FD0;&#x884C;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x65F6;&#xFF0C;travis&#x4F1A;&#x81EA;&#x52A8;&#x6CE8;&#x5165;<code>global</code>&#x8282;&#x70B9;&#x5230;<code>travis.yml</code> &#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x662F;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x5F97;&#x5230;&#x503C;&#x540E;copy&#x52A0;&#x5BC6;&#x540E;&#x7684;&#x503C;&#x8FDB;<code>travis.yml</code>&#x6587;&#x4EF6;&#x3002;<code>travis.yml</code>&#x770B;&#x8D77;&#x6765;&#x50CF;&#x8FD9;&#x6837;&#xFF1A;</p>
+<pre><code>env: 
     global: 
     - secure: &quot;...&quot; 
-    - secure: &quot;...&quot; </code></pre>
-<p>&#x6211;&#x4EEC;&#x90E8;&#x7F72;&#x811A;&#x672C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x4E86;</p><pre><code>export SSHPASS=$DEPLOY_PASS
+    - secure: &quot;...&quot;
+</code></pre><p>&#x6211;&#x4EEC;&#x90E8;&#x7F72;&#x811A;&#x672C;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x53D8;&#x91CF;&#x4E86;</p>
+<pre><code>export SSHPASS=$DEPLOY_PASS
 sshpass -e  scp -P 29134 -o stricthostkeychecking=no -r ./_book/* $DEPLOY_USER@www.css3.io:/nginx/html/
-</code></pre>
-<h1 id="&#x6700;&#x540E;">&#x6700;&#x540E;</h1><p>&#x5B8C;&#x6574;travis&#x914D;&#x7F6E;&#x53C2;&#x8003;&#x6211;&#x7684;blog&#x9879;&#x76EE;
-<a href="https://github.com/8427003/book/blob/master/.travis.yml" target="_blank">https://github.com/8427003/book/blob/master/.travis.yml</a></p><h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1><p>&#x91CD;&#x8981;&#x7684;&#x4E8B;&#x60C5;&#x8BF4;&#x4E09;&#x904D;&#xFF0C;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x81EA;&#x52A8;&#x811A;&#x672C;&#x6CA1;&#x6709;&#x4EA4;&#x4E92;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5F97;&#x7528;&#x4E00;&#x4E9B;track&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x5F53;&#x65F6;&#x7528;sshpass&#x89E3;&#x51B3;&#x4E86;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x6CE8;&#x610F;&#x5230;<strong>&#x7981;&#x7528; SSH &#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x516C;&#x94A5;&#x68C0;&#x67E5;</strong>&#xFF0C;&#x5361;&#x4F4F;&#x4E86;&#x5F88;&#x4E45;&#x3002;&#x672C;&#x673A;&#x4E0A;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#xFF08;&#x56E0;&#x4E3A;&#x672C;&#x673A;&#x767B;&#x9646;&#x8FC7;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E0D;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x9646;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x68C0;&#x67E5;&#x516C;&#x94A5;&#xFF09;&#xFF0C;&#x800C;&#x5728;travis&#x670D;&#x52A1;&#x4E0A;&#xFF0C;&#x811A;&#x672C;&#x59CB;&#x7EC8;&#x4E0D;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4E5F;&#x4E0D;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x3002;</p><h1 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h1><p><a href="http://www.worldhello.net/2010/04/08/1026.html" target="_blank">http://www.worldhello.net/2010/04/08/1026.html</a></p><p><a href="http://www.csun.edu/~see93462/primer_project/cgi-bin/index.cgi?raw=true" target="_blank">http://www.csun.edu/~see93462/primer_project/cgi-bin/index.cgi?raw=true</a></p>
+</code></pre><h1 id="&#x6700;&#x540E;">&#x6700;&#x540E;</h1>
+<p>&#x5B8C;&#x6574;travis&#x914D;&#x7F6E;&#x53C2;&#x8003;&#x6211;&#x7684;blog&#x9879;&#x76EE;
+<a href="https://github.com/8427003/book/blob/master/.travis.yml" target="_blank">https://github.com/8427003/book/blob/master/.travis.yml</a></p>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x91CD;&#x8981;&#x7684;&#x4E8B;&#x60C5;&#x8BF4;&#x4E09;&#x904D;&#xFF0C;&#x6301;&#x7EED;&#x96C6;&#x6210;&#x81EA;&#x52A8;&#x811A;&#x672C;&#x6CA1;&#x6709;&#x4EA4;&#x4E92;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x5F97;&#x7528;&#x4E00;&#x4E9B;track&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x3002;&#x5F53;&#x65F6;&#x7528;sshpass&#x89E3;&#x51B3;&#x4E86;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x6CE8;&#x610F;&#x5230;<strong>&#x7981;&#x7528; SSH &#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x516C;&#x94A5;&#x68C0;&#x67E5;</strong>&#xFF0C;&#x5361;&#x4F4F;&#x4E86;&#x5F88;&#x4E45;&#x3002;&#x672C;&#x673A;&#x4E0A;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#xFF08;&#x56E0;&#x4E3A;&#x672C;&#x673A;&#x767B;&#x9646;&#x8FC7;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E0D;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x767B;&#x9646;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x68C0;&#x67E5;&#x516C;&#x94A5;&#xFF09;&#xFF0C;&#x800C;&#x5728;travis&#x670D;&#x52A1;&#x4E0A;&#xFF0C;&#x811A;&#x672C;&#x59CB;&#x7EC8;&#x4E0D;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4E5F;&#x4E0D;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#x3002;</p>
+<h1 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h1>
+<p><a href="http://www.worldhello.net/2010/04/08/1026.html" target="_blank">http://www.worldhello.net/2010/04/08/1026.html</a></p>
+<p><a href="http://www.csun.edu/~see93462/primer_project/cgi-bin/index.cgi?raw=true" target="_blank">http://www.csun.edu/~see93462/primer_project/cgi-bin/index.cgi?raw=true</a></p>
+
                                 
                                 </section>
                             
@@ -546,7 +599,7 @@ sshpass -e  scp -P 29134 -o stricthostkeychecking=no -r ./_book/* $DEPLOY_USER@w
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"keywords":"travis,travis-ci,sshpass,stricthostkeychecking,部署到远程服务器,deploy,remote server","title":"通过travis部署代码到远程服务器","level":"1.5.4","depth":2,"next":{"title":"前端基础","level":"1.6","depth":1,"path":"front_end_base.md","ref":"front_end_base.md","articles":[{"title":"http缓存","level":"1.6.1","depth":2,"path":"http_cache.md","ref":"http_cache.md","articles":[]},{"title":"bigpipe实现理论背景篇","level":"1.6.2","depth":2,"path":"bigpipe.md","ref":"bigpipe.md","articles":[]},{"title":"bigpipe-php+nginx实战篇","level":"1.6.3","depth":2,"path":"bigpipe-nginx-php.md","ref":"bigpipe-nginx-php.md","articles":[]},{"title":"如何排查bug","level":"1.6.4","depth":2,"path":"debug_bug.md","ref":"debug_bug.md","articles":[]},{"title":"h5适配","level":"1.6.5","depth":2,"path":"h5-layout.md","ref":"h5-layout.md","articles":[]},{"title":"GET请求与POST的秘密","level":"1.6.6","depth":2,"path":"get-vs-post.md","ref":"get-vs-post.md","articles":[]},{"title":"如何理解css的BFC抽象概念","level":"1.6.7","depth":2,"path":"bfc-css.md","ref":"bfc-css.md","articles":[]},{"title":"javascript继承的演变","level":"1.6.8","depth":2,"path":"javascript-extend-history.md","ref":"javascript-extend-history.md","articles":[]},{"title":"javascript简单算法","level":"1.6.9","depth":2,"path":"javascript-algorithm.md","ref":"javascript-algorithm.md","articles":[]}]},"previous":{"title":"gitbook生成静态blog通过travis发布到github托管","level":"1.5.3","depth":2,"path":"travis-gitbook-github.md","ref":"travis-gitbook-github.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"deploy-code-to-remote-server-with-travis.md","mtime":"2016-09-20T16:23:45.966Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-20T16:25:38.874Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"keywords":"travis,travis-ci,sshpass,stricthostkeychecking,部署到远程服务器,deploy,remote server","title":"通过travis部署代码到远程服务器","level":"1.5.4","depth":2,"next":{"title":"前端基础","level":"1.6","depth":1,"path":"front_end_base.md","ref":"front_end_base.md","articles":[{"title":"http缓存","level":"1.6.1","depth":2,"path":"http_cache.md","ref":"http_cache.md","articles":[]},{"title":"bigpipe实现理论背景篇","level":"1.6.2","depth":2,"path":"bigpipe.md","ref":"bigpipe.md","articles":[]},{"title":"bigpipe-php+nginx实战篇","level":"1.6.3","depth":2,"path":"bigpipe-nginx-php.md","ref":"bigpipe-nginx-php.md","articles":[]},{"title":"如何排查bug","level":"1.6.4","depth":2,"path":"debug_bug.md","ref":"debug_bug.md","articles":[]},{"title":"h5适配","level":"1.6.5","depth":2,"path":"h5-layout.md","ref":"h5-layout.md","articles":[]},{"title":"GET请求与POST的秘密","level":"1.6.6","depth":2,"path":"get-vs-post.md","ref":"get-vs-post.md","articles":[]},{"title":"如何理解css的BFC抽象概念","level":"1.6.7","depth":2,"path":"bfc-css.md","ref":"bfc-css.md","articles":[]},{"title":"javascript继承的演变","level":"1.6.8","depth":2,"path":"javascript-extend-history.md","ref":"javascript-extend-history.md","articles":[]},{"title":"javascript简单算法","level":"1.6.9","depth":2,"path":"javascript-algorithm.md","ref":"javascript-algorithm.md","articles":[]}]},"previous":{"title":"gitbook生成静态blog通过travis发布到github托管","level":"1.5.3","depth":2,"path":"travis-gitbook-github.md","ref":"travis-gitbook-github.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"deploy-code-to-remote-server-with-travis.md","mtime":"2016-11-06T13:52:01.027Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-06T13:54:01.159Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

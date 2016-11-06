@@ -2,12 +2,12 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>javascript简单算法 | cocoo前端笔记</title>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>javascript简单算法 | cocoo前端笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.0">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -458,6 +458,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Rect服务端渲染
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="commonjs-vs-commonjs2.html">
+            
+                <a href="commonjs-vs-commonjs2.html">
+            
+                    
+                    commonjs vs commonjs2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -500,7 +532,8 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;">&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;</h1><pre><code class="lang-javascript">
+                                <h1 id="&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;">&#x6298;&#x534A;&#x67E5;&#x627E;&#x7B97;&#x6CD5;</h1>
+<pre><code class="lang-javascript">
 <span class="hljs-keyword">var</span> data = [<span class="hljs-number">3</span>, <span class="hljs-number">12</span>];
 <span class="hljs-keyword">var</span> goal = <span class="hljs-number">3</span>;
 
@@ -534,9 +567,9 @@
 }
 
 <span class="hljs-built_in">console</span>.log(bSearch(goal, data, <span class="hljs-number">0</span>, data.length - <span class="hljs-number">1</span>));
-
 </code></pre>
-<h1 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h1><pre><code class="lang-js">
+<h1 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h1>
+<pre><code class="lang-js">
 <span class="hljs-built_in">Array</span>.prototype.quickSort = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">var</span> arr = <span class="hljs-keyword">this</span> || [];
     <span class="hljs-keyword">if</span> (arr.length &lt;= <span class="hljs-number">1</span>) {
@@ -565,7 +598,8 @@
 <span class="hljs-keyword">var</span> arr = [<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
 <span class="hljs-built_in">console</span>.log(arr.quickSort());
 </code></pre>
-<h1 id="&#x6309;&#x591A;&#x5065;&#x503C;&#x6392;&#x5E8F;">&#x6309;&#x591A;&#x5065;&#x503C;&#x6392;&#x5E8F;</h1><pre><code class="lang-js">
+<h1 id="&#x6309;&#x591A;&#x5065;&#x503C;&#x6392;&#x5E8F;">&#x6309;&#x591A;&#x5065;&#x503C;&#x6392;&#x5E8F;</h1>
+<pre><code class="lang-js">
 <span class="hljs-keyword">var</span> by = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">arguments</span> || [];
 
@@ -620,7 +654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"javascript简单算法","level":"1.6.9","depth":2,"previous":{"title":"javascript继承的演变","level":"1.6.8","depth":2,"path":"javascript-extend-history.md","ref":"javascript-extend-history.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"javascript-algorithm.md","mtime":"2016-09-20T16:23:45.966Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-20T16:25:38.874Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"javascript简单算法","level":"1.6.9","depth":2,"next":{"title":"Rect服务端渲染","level":"1.7","depth":1,"ref":"","articles":[{"title":"commonjs vs commonjs2","level":"1.7.1","depth":2,"path":"commonjs-vs-commonjs2.md","ref":"commonjs-vs-commonjs2.md","articles":[]}]},"previous":{"title":"javascript继承的演变","level":"1.6.8","depth":2,"path":"javascript-extend-history.md","ref":"javascript-extend-history.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","duoshuo","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"duoshuo":{"short_name":"css3-io","theme":"default"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"javascript-algorithm.md","mtime":"2016-11-06T13:52:01.027Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-11-06T13:54:01.159Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
