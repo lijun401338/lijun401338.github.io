@@ -29,6 +29,7 @@
 <url> <loc>https://www.css3.io/javascript-extend-history.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/javascript-algorithm.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/flex-layout-best-practice.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.css3.io/promise-catch-vs-reject.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/commonjs-vs-commonjs2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/http.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/http-history.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
