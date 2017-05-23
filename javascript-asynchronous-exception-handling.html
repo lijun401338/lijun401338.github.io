@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>commonjs vs commonjs2 | cocoo前端笔记</title>
+        <title>javascript asynchronous exception handling | cocoo前端笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -35,7 +35,7 @@
     
 
         
-<meta name="keywords" content="commonjs vs commonjs2,cocoo前端笔记,www.css3.io">
+<meta name="keywords" content="javascript asynchronous exception handling,cocoo前端笔记,www.css3.io">
     
     
     
@@ -47,8 +47,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="http.html" />
     
+    <link rel="prev" href="promise-catch-vs-reject.html" />
     
 
 
@@ -531,7 +531,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.12" data-path="javascript-asynchronous-exception-handling.html">
+        <li class="chapter active" data-level="1.6.12" data-path="javascript-asynchronous-exception-handling.html">
             
                 <a href="javascript-asynchronous-exception-handling.html">
             
@@ -563,7 +563,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.7.1" data-path="commonjs-vs-commonjs2.html">
+        <li class="chapter " data-level="1.7.1" data-path="commonjs-vs-commonjs2.html">
             
                 <a href="commonjs-vs-commonjs2.html">
             
@@ -643,7 +643,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >commonjs vs commonjs2</a>
+        <a href="." >javascript asynchronous exception handling</a>
     </h1>
 </div>
 
@@ -655,50 +655,7 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x80CC;&#x666F;">&#x80CC;&#x666F;</h1>
-<p>&#x5728; webpack&#x4E2D;&#x770B;&#x5230;&#x4E86;&#x4E24;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#xFF0C;commonjs &#x548C; commonjs2. &#x5B83;&#x4EEC;&#x4E0E;&#x6A21;&#x5757;&#x5BFC;&#x51FA;&#x6709;&#x7740;&#x5BC6;&#x5207;&#x5173;&#x7CFB;&#x3002;</p>
-<h1 id="commonjs-vs-commonjs2-vs-exports-vs-moduleexports">commonjs vs commonjs2 vs exports vs module.exports</h1>
-<p>CommonJs spec defines only exports. But module.exports is used by node.js and many other CommonJs implementations.</p>
-<p>commonjs mean pure CommonJs</p>
-<p>commonjs2 also includes the module.exports stuff.</p>
-<p>&#x8FD9;&#x91CC;&#x5F15;&#x7528;&#x4E86; <a href="https://github.com/webpack/webpack/issues/1114" target="_blank">https://github.com/webpack/webpack/issues/1114</a> &#x7684;&#x56DE;&#x7B54;&#xFF0C;commonjs vs commonjs2 &#x8FD9;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#x95EE;&#x9898;&#x8FCE;&#x5203;&#x800C;&#x89E3;&#x3002;</p>
-<p>&#x90A3;&#x5230;&#x5E95;<strong>module.exports vs exports</strong> &#x533A;&#x522B;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;</p>
-<p>&#x4E2A;&#x4EBA;&#x770B;&#x4E86;&#x5F88;&#x591A;&#x6587;&#x7AE0;&#xFF0C;&#x4EFB;&#x7136;&#x61F5;&#xFF0C;&#x89C9;&#x5F97;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;<a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">https://www.sitepoint.com/understanding-module-exports-exports-node-js/</a> &#x89E3;&#x91CA;&#x5F97;&#x6BD4;&#x8F83;&#x5230;&#x4F4D;&#x3002;</p>
-<p><strong>&#x7406;&#x89E3;&#x5173;&#x952E;&#x70B9;</strong></p>
-<ol>
-<li><p><strong>require</strong> &#x5927;&#x81F4;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code>     var require = function(path) { 
-         // ... 
-         return module.exports; 
-     };
-</code></pre></li>
-<li><p>module.exports =&gt; {} &lt;= exports &#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002; &#x4E24;&#x8005;&#x6700;&#x597D;&#x4E0D;&#x8981;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
-<pre><code> // exports &#x4EC5;&#x9002;&#x7528;&#x4E8E;&#xFF1A;
-
- exports.a = &apos;xxx&apos;;
-
- // module.exports &#x9002;&#x7528;&#x4E8E;
-
- module.exports = &apos;xxx&apos;;
- module.exports.a = &apos;xxx&apos;;
-</code></pre><p> <strong>&#x6211;&#x53C8;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A;&#x7591;&#x95EE;&#xFF0C;exports &#x770B;&#x8D77;&#x6765;&#x662F;&#x591A;&#x4F59;&#x7684;&#x3002;&#x5B83;&#x6240;&#x80FD;&#x505A;&#x7684;&#xFF0C;module.exports&#x90FD;&#x80FD;&#x5B9E;&#x73B0;&#x3002;</strong></p>
-</li>
-<li><p>&#x5176;&#x5B9E;<strong>2&#x4E2D;&#x7684;&#x7591;&#x95EE;</strong>&#x4E00;&#x70B9;&#x4E5F;&#x6CA1;&#x9519;&#xFF0C;nodejs &#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;&#x63D0;&#x53CA;<a href="https://nodejs.org/docs/latest/api/modules.html#modules_exports_alias" target="_blank">https://nodejs.org/docs/latest/api/modules.html#modules_exports_alias</a>
-<strong>exports</strong> &#x53EA;&#x662F;<strong>module.exports</strong>&#x7684;&#x4E00;&#x4E2A;<strong>&#x522B;&#x540D;</strong> &#x8FD8;&#x63D0;&#x793A;&#x5F53;&#x4F60;&#x641E;&#x4E0D;&#x6E05;&#x695A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x7528;module.exports&#x3002;</p>
-</li>
-</ol>
-<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
-<ol>
-<li><p>commonjs &#x89C4;&#x8303;&#x53EA;&#x5B9A;&#x4E49;&#x4E86;exports&#xFF0C;&#x800C; module.exports&#x662F;nodejs&#x5BF9;commonjs&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5B9E;&#x73B0;&#x5F80;&#x5F80;&#x4F1A;&#x5728;&#x6EE1;&#x8DB3;&#x89C4;&#x8303;&#x524D;&#x63D0;&#x4E0B;&#x4F5C;&#x4E9B;&#x6269;&#x5C55;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x628A;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x79F0;&#x4E3A;&#x4E86;commonjs2.</p>
-</li>
-<li><p>module.exports &#x662F;nodejs&#x5BF9;commonjs&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x3002;exports &#x53EA;&#x662F;&#x5B83;&#x7684;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#x3002;&#x641E;&#x4E0D;&#x6E05;&#x695A;&#x5173;&#x7CFB;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x8FD9;&#x4E2A;&#x522B;&#x540D;&#x3002;</p>
-</li>
-</ol>
-<h1 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h1>
-<p><a href="https://www.sitepoint.com/understanding-module-exports-exports-node-js/" target="_blank">https://www.sitepoint.com/understanding-module-exports-exports-node-js/</a></p>
-<p><a href="https://nodejs.org/docs/latest/api/modules.html#modules_exports_alias" target="_blank">https://nodejs.org/docs/latest/api/modules.html#modules_exports_alias</a></p>
-<p><a href="https://github.com/webpack/webpack/issues/1114" target="_blank">https://github.com/webpack/webpack/issues/1114</a></p>
-
+                                
                                 
                                 </section>
                             
@@ -709,10 +666,10 @@
 
             
                 
-                
-                <a href="http.html" class="navigation navigation-next navigation-unique" aria-label="Next page: http2">
-                    <i class="fa fa-angle-right"></i>
+                <a href="promise-catch-vs-reject.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Promise catch vs reject">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -721,7 +678,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"commonjs vs commonjs2","level":"1.7.1","depth":2,"next":{"title":"http2","level":"1.8","depth":1,"path":"http.md","ref":"http.md","articles":[{"title":"1.http connection history","level":"1.8.1","depth":2,"path":"http-history.md","ref":"http-history.md","articles":[]}]},"previous":{"title":"Rect服务端渲染","level":"1.7","depth":1,"ref":"","articles":[{"title":"commonjs vs commonjs2","level":"1.7.1","depth":2,"path":"commonjs-vs-commonjs2.md","ref":"commonjs-vs-commonjs2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"commonjs-vs-commonjs2.md","mtime":"2017-05-23T10:15:53.048Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-23T10:17:49.864Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"javascript asynchronous exception handling","level":"1.6.12","depth":2,"next":{"title":"Rect服务端渲染","level":"1.7","depth":1,"ref":"","articles":[{"title":"commonjs vs commonjs2","level":"1.7.1","depth":2,"path":"commonjs-vs-commonjs2.md","ref":"commonjs-vs-commonjs2.md","articles":[]}]},"previous":{"title":"Promise catch vs reject","level":"1.6.11","depth":2,"path":"promise-catch-vs-reject.md","ref":"promise-catch-vs-reject.md","articles":[]},"dir":"neutral"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"javascript-asynchronous-exception-handling.md","mtime":"2017-05-23T10:15:53.048Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-23T10:17:49.864Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
