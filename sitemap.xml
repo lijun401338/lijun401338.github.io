@@ -31,7 +31,9 @@
 <url> <loc>https://www.css3.io/flex-layout-best-practice.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/promise-catch-vs-reject.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/javascript-asynchronous-exception-handling.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.css3.io/rectfu-wu-duan-xuan-ran.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/commonjs-vs-commonjs2.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.css3.io/isomorphic-Is-not-perfect-as-you-think.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/http.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/http-history.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
