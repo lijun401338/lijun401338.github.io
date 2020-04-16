@@ -1,0 +1,958 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>React defaultValue vs value | cocoo前端笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+
+        
+<meta name="keywords" content="React defaultValue vs value,cocoo前端笔记,www.css3.io">
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ji-yu-ssr-tong-gou-shi-xian.html" />
+    
+    
+    <link rel="prev" href="isomorphic-Is-not-perfect-as-you-think.html" />
+    
+
+
+    </head>
+    <body>
+        
+    
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.css3.io" target="_blank" class="custom-link">www.css3.io</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    关于我
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="resume.html">
+            
+                <a href="resume.html">
+            
+                    
+                    简历-web前端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="util-stack.html">
+            
+                <a href="util-stack.html">
+            
+                    
+                    工具收集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="resume-detail.html">
+            
+                <a href="resume-detail.html">
+            
+                    
+                    简历详细
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="linux-file-permissions.html">
+            
+                <a href="linux-file-permissions.html">
+            
+                    
+                    linux文件权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="linux-cmd-user.html">
+            
+                <a href="linux-cmd-user.html">
+            
+                    
+                    user相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="how-yum-install-release-soft.html">
+            
+                <a href="how-yum-install-release-soft.html">
+            
+                    
+                    如何使用yum安装最新软件包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="ming_ling_xing_kuai_jie_jian.html">
+            
+                <a href="ming_ling_xing_kuai_jie_jian.html">
+            
+                    
+                    让命令行飞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="in-the-shell-what-does-21-mean.html">
+            
+                <a href="in-the-shell-what-does-21-mean.html">
+            
+                    
+                    Shell中 2>&1理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="linuxquan-ju-fan-qiang.html">
+            
+                <a href="linuxquan-ju-fan-qiang.html">
+            
+                    
+                    linux全局翻墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="vim.html">
+            
+                <a href="vim.html">
+            
+                    
+                    VIM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="undo.html">
+            
+                <a href="undo.html">
+            
+                    
+                    undo持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="hui-gun.html">
+            
+                <a href="hui-gun.html">
+            
+                    
+                    回滚revert和reset区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="rebase-vs-merge.html">
+            
+                <a href="rebase-vs-merge.html">
+            
+                    
+                    3图带你理解rebase和merge
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="getting_started.html">
+            
+                <a href="getting_started.html">
+            
+                    
+                    开始实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="v8_helloworld.html">
+            
+                <a href="v8_helloworld.html">
+            
+                    
+                    v8引擎helloworld
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="php.html">
+            
+                <a href="php.html">
+            
+                    
+                    php+hhvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="travis-gitbook-github.html">
+            
+                <a href="travis-gitbook-github.html">
+            
+                    
+                    gitbook生成静态blog通过travis发布到github托管
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="deploy-code-to-remote-server-with-travis.html">
+            
+                <a href="deploy-code-to-remote-server-with-travis.html">
+            
+                    
+                    通过travis部署代码到远程服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="nginx-https-blog.html">
+            
+                <a href="nginx-https-blog.html">
+            
+                    
+                    nginx静态http2博客
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="zui-jia-shi-jian.html">
+            
+                <a href="zui-jia-shi-jian.html">
+            
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="zui-jia-shi-jian/zipya-suo.html">
+            
+                <a href="zui-jia-shi-jian/zipya-suo.html">
+            
+                    
+                    node-zip压缩库选择
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="zui-jia-shi-jian/jsfu-dian-shu-yun-suan.html">
+            
+                <a href="zui-jia-shi-jian/jsfu-dian-shu-yun-suan.html">
+            
+                    
+                    js浮点数运算不准确
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="zui-jia-shi-jian/fastclick-300msdian-ji-yan-chi.html">
+            
+                <a href="zui-jia-shi-jian/fastclick-300msdian-ji-yan-chi.html">
+            
+                    
+                    react解决300ms点击延迟
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="front_end_base.html">
+            
+                <a href="front_end_base.html">
+            
+                    
+                    前端基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="http_cache.html">
+            
+                <a href="http_cache.html">
+            
+                    
+                    http缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="bigpipe.html">
+            
+                <a href="bigpipe.html">
+            
+                    
+                    bigpipe实现理论背景篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="bigpipe-nginx-php.html">
+            
+                <a href="bigpipe-nginx-php.html">
+            
+                    
+                    bigpipe-php+nginx实战篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="debug_bug.html">
+            
+                <a href="debug_bug.html">
+            
+                    
+                    如何排查bug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="get-vs-post.html">
+            
+                <a href="get-vs-post.html">
+            
+                    
+                    GET请求与POST的秘密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="bfc-css.html">
+            
+                <a href="bfc-css.html">
+            
+                    
+                    如何理解css的BFC抽象概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="javascript-extend-history.html">
+            
+                <a href="javascript-extend-history.html">
+            
+                    
+                    javascript继承的演变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="javascript-algorithm.html">
+            
+                <a href="javascript-algorithm.html">
+            
+                    
+                    javascript简单算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="flex-layout-best-practice.html">
+            
+                <a href="flex-layout-best-practice.html">
+            
+                    
+                    flex布局最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="promise-catch-vs-reject.html">
+            
+                <a href="promise-catch-vs-reject.html">
+            
+                    
+                    Promise catch vs reject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="javascript-asynchronous-exception-handling.html">
+            
+                <a href="javascript-asynchronous-exception-handling.html">
+            
+                    
+                    javascript asynchronous exception handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="cookie-vs-localstorege.html">
+            
+                <a href="cookie-vs-localstorege.html">
+            
+                    
+                    cookie vs  localStorage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="javascriptli-shi-3001-yu-fa-biao-zhun.html">
+            
+                <a href="javascriptli-shi-3001-yu-fa-biao-zhun.html">
+            
+                    
+                    javascript标准制定，babeljs关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="rectfu-wu-duan-xuan-ran.html">
+            
+                <a href="rectfu-wu-duan-xuan-ran.html">
+            
+                    
+                    React架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="commonjs-vs-commonjs2.html">
+            
+                <a href="commonjs-vs-commonjs2.html">
+            
+                    
+                    commonjs vs commonjs2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="isomorphic-Is-not-perfect-as-you-think.html">
+            
+                <a href="isomorphic-Is-not-perfect-as-you-think.html">
+            
+                    
+                    同构并非想象中完美
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="react-defaultvalue-vs-value.html">
+            
+                <a href="react-defaultvalue-vs-value.html">
+            
+                    
+                    React defaultValue vs value
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="ji-yu-ssr-tong-gou-shi-xian.html">
+            
+                <a href="ji-yu-ssr-tong-gou-shi-xian.html">
+            
+                    
+                    基于ssr 同构实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="http.html">
+            
+                <a href="http.html">
+            
+                    
+                    网络
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="http-history.html">
+            
+                <a href="http-history.html">
+            
+                    
+                    1.http connection history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="sslwo-shou.html">
+            
+                <a href="sslwo-shou.html">
+            
+                    
+                    2.ssl握手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="cao-zuo-xi-tong.html">
+            
+                <a href="cao-zuo-xi-tong.html">
+            
+                    
+                    通俗易懂讲操作系统寻址
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="cao-zuo-xi-tong/qian-yan.html">
+            
+                <a href="cao-zuo-xi-tong/qian-yan.html">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="cao-zuo-xi-tong/tong-su-yi-dong-jiang-elf.html">
+            
+                <a href="cao-zuo-xi-tong/tong-su-yi-dong-jiang-elf.html">
+            
+                    
+                    2.通俗易懂讲ELF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="cao-zuo-xi-tong/tong-su-yi-dong-jiang-lian-jie.html">
+            
+                <a href="cao-zuo-xi-tong/tong-su-yi-dong-jiang-lian-jie.html">
+            
+                    
+                    1.通俗易懂讲链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="cao-zuo-xi-tong/tong-su-yi-dong-jiang-xun-zhi.html">
+            
+                <a href="cao-zuo-xi-tong/tong-su-yi-dong-jiang-xun-zhi.html">
+            
+                    
+                    3.通俗易懂讲寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >React defaultValue vs value</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="react-defaultvalue-vs-value"><strong>React defaultValue vs value</strong></h1>
+<p><strong>React &#x4E2D;&#x4E3A;&#x4F55;&#x9700;&#x8981;defaultValue&#xFF1F;</strong></p>
+<p>defaultValue &#x4E00;&#x822C;&#x7528;&#x4E8E;&#x8868;&#x5355;&#xFF0C;&#x7ED9;&#x8868;&#x5355;&#x5143;&#x7D20;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x5316;&#x503C;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x53EA;&#x662F;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5982;&#x679C;defaultValue&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x8868;&#x5355;&#x91CC;&#x7684;&#x503C;&#x4E0D;&#x4F1A;&#x88AB;&#x6539;&#x53D8;&#x3002;</p>
+<p><strong>value&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#xFF0C;&#x4E3A;&#x4F55;&#x8FD8;&#x8981;defaultValue&#x5462;&#xFF1F;</strong></p>
+<p>&#x8868;&#x5355;&#x5206;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x53D7;&#x63A7;&#x8868;&#x5355;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x975E;&#x53D7;&#x63A7;&#x8868;&#x5355;&#x3002;&#x4EC5;&#x7528;value&#xFF0C;&#x4F7F;&#x7528;&#x8005;&#x4F1A;&#x8BEF;&#x4EE5;&#x4E3A;value&#x503C;&#x6539;&#x53D8;&#xFF0C;&#x8868;&#x5355;&#x663E;&#x793A;&#x7684;&#x503C;&#x4E5F;&#x4F1A;&#x8DDF;&#x7740;&#x53D8;&#xFF0C;&#x8FD9;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x53D7;&#x63A7;&#x8868;&#x5355;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5B8C;&#x5168;&#x7B26;&#x5408;&#x671F;&#x671B;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x975E;&#x53D7;&#x63A7;&#x8868;&#x5355;&#xFF0C;props.value&#x53D8;&#x5316;&#xFF0C;&#x5176;&#x8868;&#x5355;&#x663E;&#x793A;&#x7684;&#x503C;&#x4E0D;&#x4F1A;&#x8DDF;&#x7740;&#x53D8;&#xFF08;&#x56E0;&#x4E3A;&#x8868;&#x5355;&#x5185;&#x90E8;&#x6709;&#x81EA;&#x5DF1;&#x7684;state&#xFF09;&#xFF0C;&#x4E3A;&#x4E86;&#x533A;&#x522B;&#x8FD9;&#x4E24;&#x79CD;&#x573A;&#x666F;&#xFF0C;&#x6240;&#x4EE5;&#x5F15;&#x5165;&#x4E86;defaultValue&#xFF0C;&#x8868;&#x793A;&#x53EA;&#x7ED9;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<p><strong>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;</strong>&#xFF1A;</p>
+<p>&#x7B80;&#x5355;&#x6765;&#x8BB2;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x6709;value&#x65F6;&#x3002;&#x5F53;&#x65E2;&#x60F3;&#x7ED9;input&#x8D4B;&#x4E88;&#x521D;&#x59CB;&#x503C;&#xFF08;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x666E;&#x901A;&#x573A;&#x666F;&#xFF09;&#xFF0C;&#x53C8;&#x4E0D;&#x60F3;input &#x4F5C;&#x4E3A;&#x53D7;&#x63A7;&#x8868;&#x5355;&#xFF08;&#x53D7;&#x63A7;&#x8868;&#x5728;&#x67D0;&#x4E9B;&#x6781;&#x7AEF;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x6027;&#x80FD;&#x5B58;&#x5728;&#x95EE;&#x9898;&#xFF09;&#x4F60;&#x4F1A;&#x5199;&#x51FA;</p>
+<p><code>&lt;input value={this.state.value} /&gt;</code>&#x8FD9;&#x65F6;&#x4E0D;&#x80FD;&#x591F;&#x540C;&#x65F6;&#x6EE1;&#x8DB3;&#x4E24;&#x79CD;&#x573A;&#x666F;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x8FD9;&#x662F;&#x53D7;&#x63A7;&#x8868;&#x5355;&#xFF0C;&#x5FC5;&#x987B;&#x7ED1;&#x5B9A;change&#x4E8B;&#x4EF6;&#xFF0C;&#x7EF4;&#x62A4;state&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5927;&#x6570;&#x7EC4;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x80FD;&#x6709;&#x6027;&#x80FD;&#x95EE;&#x9898;&#x3002;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x7528;defaultValue &#x6765;&#x8868;&#x793A;&#x521D;&#x59CB;&#x503C;&#xFF0C;<code>&lt;input defaultValue={this.state.value} /&gt;</code>&#x4F60;&#x4E0D;&#x5FC5;&#x7ED1;&#x5B9A;change&#x4E8B;&#x4EF6;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x53D7;&#x63A7;&#x8868;&#x5355;&#x3002;</p>
+<p>&#x4E0D;&#x53D7;&#x63A7;&#x5236;&#x7EC4;&#x4EF6;&#x901A;&#x5E38;&#x6709;&#x4E2A;defaultValue</p>
+<p><a href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key" target="_blank">https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#recommendation-fully-uncontrolled-component-with-a-key</a></p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="isomorphic-Is-not-perfect-as-you-think.html" class="navigation navigation-prev " aria-label="Previous page: 同构并非想象中完美">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ji-yu-ssr-tong-gou-shi-xian.html" class="navigation navigation-next " aria-label="Next page: 基于ssr 同构实现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"React defaultValue vs value","level":"1.8.3","depth":2,"next":{"title":"基于ssr 同构实现","level":"1.8.4","depth":2,"path":"ji-yu-ssr-tong-gou-shi-xian.md","ref":"ji-yu-ssr-tong-gou-shi-xian.md","articles":[]},"previous":{"title":"同构并非想象中完美","level":"1.8.2","depth":2,"path":"isomorphic-Is-not-perfect-as-you-think.md","ref":"isomorphic-Is-not-perfect-as-you-think.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"react-defaultvalue-vs-value.md","mtime":"2020-04-16T15:28:44.704Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-16T15:29:51.672Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+
+        
+    
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-baidu_gio/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+    </body>
+</html>
+
