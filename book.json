@@ -1,0 +1,35 @@
+{
+    "title": "cocoo前端笔记",
+    "description": "cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog",
+    "styles": {
+        "website": "styles/website.css"
+    },
+    "links": {
+        "sidebar": {
+    	    "www.css3.io": "https://www.css3.io"
+    	}
+    },
+    "plugins": [
+        "ga",
+        "baidu_gio",
+        "-search",
+        "-lunr",
+        "-sharing",
+        "sitemap"
+    ],
+    "pluginsConfig": {
+       "ga": {
+            "token": "UA-48397157-2",
+            "configuration": {
+                "cookieName": "www.css3.io",
+                "cookieDomain": "www.css3.io"
+            }
+       },
+        "baidu_gio": {
+            "token": "3b06928c84dad0b03dc0fdca98e190c9"
+        },
+        "sitemap": {
+            "hostname": "https://www.css3.io/"
+        }
+    }
+}
