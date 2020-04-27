@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>通俗易懂讲操作系统寻址 | cocoo前端笔记</title>
+        <title>v8源码分析 | cocoo前端笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -39,7 +39,7 @@
     
 
         
-<meta name="keywords" content="通俗易懂讲操作系统寻址,cocoo前端笔记,www.css3.io">
+<meta name="keywords" content="v8源码分析,cocoo前端笔记,www.css3.io">
     
     
     
@@ -51,10 +51,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="cao-zuo-xi-tong/qian-yan.html" />
+    <link rel="next" href="zui-jia-shi-jian.html" />
     
     
-    <link rel="prev" href="33mtubu-yi-zhi-dao-zhi-diu-bao.html" />
+    <link rel="prev" href="nodejsyuan-ma-fen-xi.html" />
     
 
 
@@ -414,7 +414,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.7" data-path="v8yuan-ma-fen-xi.html">
+        <li class="chapter active" data-level="1.5.7" data-path="v8yuan-ma-fen-xi.html">
             
                 <a href="v8yuan-ma-fen-xi.html">
             
@@ -846,7 +846,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.10" data-path="cao-zuo-xi-tong.html">
+        <li class="chapter " data-level="1.10" data-path="cao-zuo-xi-tong.html">
             
                 <a href="cao-zuo-xi-tong.html">
             
@@ -947,7 +947,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >通俗易懂讲操作系统寻址</a>
+        <a href="." >v8源码分析</a>
     </h1>
 </div>
 
@@ -959,7 +959,105 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="v8&#x6E90;&#x7801;&#x5206;&#x6790;">v8&#x6E90;&#x7801;&#x5206;&#x6790;</h1>
+<p>&#x7248;&#x672C;&#xFF1A;v8-0.1.5&#xFF0C;<br>&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A; <a href="https://chromium.googlesource.com/v8/v8.git" target="_blank">https://chromium.googlesource.com/v8/v8.git</a><br>&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF1A;&#x7531;&#x4E8E;&#x7248;&#x672C;&#x592A;&#x4F4E;&#xFF0C;&#x6CA1;&#x6709;sample&#xFF0C;&#x6211;&#x4EEC;&#x4E0B;&#x8F7D;&#x4E86;&#x4E00;&#x4E2A;0.2.5&#xFF0C;&#x63D0;&#x53D6;&#x4E86;&#x91CC;&#x9762;&#x7684;shell.cc &#x5220;&#x6539;&#x4E9B;&#x4EE3;&#x7801;&#xFF0C;&#x7528;&#x4E8E;0.1.5&#x7248;&#x672C;<br>&#x5E26;sample&#x7684;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/8427003/v8-0.1.5-mirror" target="_blank">https://github.com/8427003/v8-0.1.5-mirror</a><br>&#x5DE5;&#x5177;&#xFF1A;clion , &#x4E3B;&#x8981;&#x9760;&#x5168;&#x6587;&#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;&#x4ECE;&#x5165;&#x53E3;&#x5F00;&#x59CB;&#x5206;&#x6790;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x8DEF;&#x5F84;<br>&#x73AF;&#x5883;&#xFF1A;&#x7528;&#x4E86;&#x865A;&#x62DF;&#x673A;i386 centos 6&#xFF0C;&#x7531;&#x4E8E;&#x4F4E;&#x7248;&#x672C;&#x53EA;&#x652F;&#x6301;arm + i386&#xFF0C; mac &#x4E0A;docker i386&#x7F16;&#x8BD1;&#x4F1A;&#x51FA;&#x95EE;&#x9898;&#xFF08;&#x653E;&#x5F03;&#xFF09;<br>&#x7F16;&#x8BD1;&#x5DE5;&#x5177;&#xFF1A;scons &#x7528;&#x7684;v1.0.0 &#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#xFF0C;&#x9AD8;&#x7248;&#x672C;&#x7684;scons &#x662F;&#x65E0;&#x6CD5;&#x7F16;&#x8BD1;v8-0.1.5&#x7684;<br>&#x5165;&#x53E3;&#x6587;&#x4EF6;&#xFF1A;shell.cc &#xFF08;&#x5E26;sample&#x7684;&#x5730;&#x5740;&#x91CC;&#x624D;&#x4F1A;&#x6709;shell.cc &#x6587;&#x4EF6;&#xFF09;</p>
+<p>&#x5173;&#x952E;&#x5B57;&#xFF1A;</p>
+<pre><code>v8::Handle&lt;v8::Script&gt; script = v8::Script::Compile(source); 
+Local&lt;Script&gt; Script::Compile(v8::Handle&lt;String&gt; source,
+Handle&lt;JSFunction&gt; Compiler::Compile(Handle&lt;String&gt; source,
+    MakeFunction(true, false, script, extension, pre_data);
+    static Handle&lt;JSFunction&gt; MakeFunction(bool is_global,
+        FunctionLiteral* lit = MakeAST(is_global, script, extension, pre_data);
+
+            //&#x8FD9;&#x91CC;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x5206;&#x914D;&#x4E00;&#x4E2A;parser&#xFF0C;parser.cc &#x91CC;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;top_scope&#x6210;&#x5458;&#x53D8;&#x91CF;
+            // &#x8FD9;&#x4E2A;top_scope&#x4F1A;&#x5B58;&#x653E;&#x51FD;&#x6570;&#x91CC;&#x7684;&#x7EA6;&#x675F;&#x53D8;&#x91CF;
+            FunctionLiteral* MakeAST(bool compile_in_global_context, 
+
+            FunctionLiteral* result = parser.ParseProgram(source,&#x2028;            FunctionLiteral* Parser::ParseProgram(Handle&lt;String&gt; source,
+                scanner_.Init(source, stream, 0);
+                void Scanner::Init(Handle&lt;String&gt; source, unibrow::CharacterStream* stream,
+            ParseSourceElements(&amp;body, Token::EOS, &amp;ok);
+            void* Parser::ParseSourceElements(ZoneListWrapper&lt;Statement&gt;* processor,
+            Statement* stat = ParseStatement(NULL, CHECK_OK);
+            Statement* Parser::ParseStatement(ZoneStringList* labels, bool* ok) {
+
+                // &#x5F00;&#x59CB;&#x626B;&#x63CF; &#x53D8;&#x91CF;&#x7533;&#x660E;&#x2028;                Block* Parser::ParseVariableStatement(bool* ok) {
+                                  // var a = 1; &#x8D4B;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x5206;&#x6790;
+                    Block* Parser::ParseVariableDeclarations(bool accept_IN,
+
+                    // left  as proxy, &#x53D8;&#x91CF;name&#x4E0E;proxy&#x7ED1;&#x5B9A;
+                    VariableProxy* AstBuildingParser::Declare(Handle&lt;String&gt; name,
+                        Variable* Scope::Declare(Handle&lt;String&gt; name, Variable::Mode mode) {
+
+                    // right value, &#x7B80;&#x5355;&#x7684;var a = 1; &#x5728;&#x5206;&#x6790;=&#x53F7;&#x53F3;&#x8FB9;&#x503C;&#x65F6;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x6F2B;&#x957F;&#x8FC7;&#x7A0B;
+                    value = ParseAssignmentExpression(accept_IN, CHECK_OK);
+                    Expression* Parser::ParseAssignmentExpression(bool accept_IN, bool* ok) {
+                    Expression* Parser::ParseConditionalExpression(bool accept_IN, bool* ok) {
+                    Expression* expression = ParseBinaryExpression(4, accept_IN, CHECK_OK);
+                    Expression* Parser::ParseBinaryExpression(int prec, bool accept_IN, bool* ok) {
+                    Expression* x = ParseUnaryExpression(CHECK_OK);
+                    Expression* Parser::ParseUnaryExpression(bool* ok) {
+                    return ParsePostfixExpression(ok);
+                    Expression* Parser::ParsePostfixExpression(bool* ok) {
+                    Expression* result = ParseLeftHandSideExpression(CHECK_OK);
+                    Expression* Parser::ParseLeftHandSideExpression(bool* ok) {
+                    result = ParseMemberExpression(CHECK_OK);
+                    Expression* Parser::ParseMemberExpression(bool* ok) {
+                    return ParseMemberWithNewPrefixesExpression(&amp;new_positions, ok);
+                    Expression* Parser::ParseMemberWithNewPrefixesExpression(
+                    result = ParsePrimaryExpression(CHECK_OK);
+                    Expression* Parser::ParsePrimaryExpression(bool* ok) {
+                        case Token::NUMBER: {
+                        result = NewNumberLiteral(value);
+                        Literal* Parser::NewNumberLiteral(double number) {
+
+                    // left + right
+                    // block -&gt;  ExpressionStatement -&gt; Assignment -&gt;    target: VariableProxy + value: express
+                    Assignment* assignment = NEW(Assignment(op, last_var, value, position));
+
+                // &#x51FD;&#x6570;&#x7533;&#x660E;
+                return ParseFunctionDeclaration(ok);
+                Statement* Parser::ParseFunctionDeclaration(bool* ok) {
+
+
+
+
+        Handle&lt;Code&gt; code = MakeCode(lit, script, is_eval);
+            static Handle&lt;Code&gt; MakeCode(FunctionLiteral* literal,
+            Handle&lt;Code&gt; result = CodeGenerator::MakeCode(literal, script, is_eval);
+            Handle&lt;Code&gt; CodeGenerator::MakeCode(FunctionLiteral* fun,
+            Handle&lt;Code&gt; Ia32CodeGenerator::MakeCode(FunctionLiteral* flit,
+                cgen.GenCode(flit);
+                void Ia32CodeGenerator::GenCode(FunctionLiteral* fun) {
+                    VisitStatements(body);
+                    void Visitor::VisitStatements(ZoneList&lt;Statement*&gt;* statements) {
+                    void Visit(Node* node) { node-&gt;Accept(this); }
+                    #define DECL_ACCEPT(type)   
+
+                                     // var a = 1; &#x8D4B;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x5206;&#x6790;
+                    void Ia32CodeGenerator::VisitBlock(Block* node) {
+                    void Visitor::VisitStatements(ZoneList&lt;Statement*&gt;* statements) {
+                    void Ia32CodeGenerator::VisitExpressionStatement(ExpressionStatement* node) {
+                    void Ia32CodeGenerator::Load(Expression* x, CodeGenState::AccessType access) {
+                    void Ia32CodeGenerator::LoadCondition(Expression* x,
+                        Visit(x);
+                        void Ia32CodeGenerator::VisitCallRuntime(CallRuntime* node) {
+                            Load(args-&gt;at(i));
+                            void Ia32CodeGenerator::VisitLiteral(Literal* node) {    
+                            void Ia32CodeGenerator::VisitLiteral(Literal* node) {
+                            __ CallRuntime(function, args-&gt;length());
+                            void MacroAssembler::CallRuntime(Runtime::Function* f, int num_arguments) {
+                                void MacroAssembler::CallStub(CodeStub* stub) {
+                                Handle&lt;Code&gt; CodeStub::GetCode() {
+                                virtual void Generate(MacroAssembler* masm) = 0;
+                                void RuntimeStub::Generate(MacroAssembler* masm) {
+
+
+                    // void Ia32CodeGenerator::VisitVariableProxy(VariableProxy* proxy_node) {
+                    void Ia32CodeGenerator::VisitAssignment(Assignment* node) {
+                    void SetValue(Reference* ref) { AccessReference(ref, CodeGenState::STORE); }
+                    void Ia32CodeGenerator::AccessReference(Reference* ref,
+</code></pre>
                                 
                                 </section>
                             
@@ -970,12 +1068,12 @@
 
             
                 
-                <a href="33mtubu-yi-zhi-dao-zhi-diu-bao.html" class="navigation navigation-prev " aria-label="Previous page: 3.3.mtu不一致导致丢包">
+                <a href="nodejsyuan-ma-fen-xi.html" class="navigation navigation-prev " aria-label="Previous page: nodejs源码分析">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="cao-zuo-xi-tong/qian-yan.html" class="navigation navigation-next " aria-label="Next page: 前言">
+                <a href="zui-jia-shi-jian.html" class="navigation navigation-next " aria-label="Next page: 最佳实践">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -986,7 +1084,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"通俗易懂讲操作系统寻址","level":"1.10","depth":1,"next":{"title":"前言","level":"1.10.1","depth":2,"path":"cao-zuo-xi-tong/qian-yan.md","ref":"cao-zuo-xi-tong/qian-yan.md","articles":[]},"previous":{"title":"3.3.mtu不一致导致丢包","level":"1.9.6","depth":2,"path":"33mtubu-yi-zhi-dao-zhi-diu-bao.md","ref":"33mtubu-yi-zhi-dao-zhi-diu-bao.md","articles":[]},"dir":"neutral"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"disqus":{"useIdentifier":false,"shortName":"css3io"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"cao-zuo-xi-tong.md","mtime":"2020-04-27T02:21:15.690Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-27T02:22:19.005Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"v8源码分析","level":"1.5.7","depth":2,"next":{"title":"最佳实践","level":"1.6","depth":1,"path":"zui-jia-shi-jian.md","ref":"zui-jia-shi-jian.md","articles":[{"title":"node-zip压缩库选择","level":"1.6.1","depth":2,"path":"zui-jia-shi-jian/zipya-suo.md","ref":"zui-jia-shi-jian/zipya-suo.md","articles":[]},{"title":"js浮点数运算不准确","level":"1.6.2","depth":2,"path":"zui-jia-shi-jian/jsfu-dian-shu-yun-suan.md","ref":"zui-jia-shi-jian/jsfu-dian-shu-yun-suan.md","articles":[]},{"title":"react解决300ms点击延迟","level":"1.6.3","depth":2,"path":"zui-jia-shi-jian/fastclick-300msdian-ji-yan-chi.md","ref":"zui-jia-shi-jian/fastclick-300msdian-ji-yan-chi.md","articles":[]}]},"previous":{"title":"nodejs源码分析","level":"1.5.6","depth":2,"path":"nodejsyuan-ma-fen-xi.md","ref":"nodejsyuan-ma-fen-xi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"disqus":{"useIdentifier":false,"shortName":"css3io"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"v8yuan-ma-fen-xi.md","mtime":"2020-04-27T02:21:15.694Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-27T02:22:19.005Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
