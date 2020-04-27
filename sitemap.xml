@@ -17,12 +17,13 @@
 <url> <loc>https://www.css3.io/hui-gun.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/rebase-vs-merge.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/getting_started.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.css3.io/v8_helloworld.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/php.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/travis-gitbook-github.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/deploy-code-to-remote-server-with-travis.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/nginx-https-blog.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.css3.io/v8yin-qing.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/nodejsyuan-ma-fen-xi.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.css3.io/v8_helloworld.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/v8yuan-ma-fen-xi.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/jit-shi-yi-zhong-you-hua-ji-zhu.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/zui-jia-shi-jian.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -55,9 +56,4 @@
 <url> <loc>https://www.css3.io/31linuxxi-tong-diao-you.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/32tcpdum+wiresharkzhua-bao-fen-xi.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.css3.io/33mtubu-yi-zhi-dao-zhi-diu-bao.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.css3.io/cao-zuo-xi-tong.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.css3.io/cao-zuo-xi-tong/qian-yan.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.css3.io/cao-zuo-xi-tong/tong-su-yi-dong-jiang-elf.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.css3.io/cao-zuo-xi-tong/tong-su-yi-dong-jiang-lian-jie.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.css3.io/cao-zuo-xi-tong/tong-su-yi-dong-jiang-xun-zhi.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 </urlset>
