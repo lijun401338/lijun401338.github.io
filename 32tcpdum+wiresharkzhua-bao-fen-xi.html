@@ -914,7 +914,44 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="tcpdump">tcpdump</h1>
+<h3 id="&#x6293;&#x7AEF;&#x53E3;&#x4E3A;30004&#xFF0C;&#x6240;&#x6709;&#x7F51;&#x5361;">&#x6293;&#x7AEF;&#x53E3;&#x4E3A;30004&#xFF0C;&#x6240;&#x6709;&#x7F51;&#x5361;</h3>
+<pre><code>tcpdump -i any port  30004 -w ./xx.cap
+</code></pre><p>30004 &#x4E3A;tcp &#x76D1;&#x542C;&#x7AEF;&#x53E3;&#xFF0C;xx.cap &#x662F;&#x6307;&#x628A;&#x6570;&#x636E;&#x5199;&#x5230;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5F85;&#x6211;&#x4EEC;&#x7528;wireshark&#x5206;&#x6790;</p>
+<h3 id="&#x5BB9;&#x5668;&#x5185;&#x6293;&#x5305;">&#x5BB9;&#x5668;&#x5185;&#x6293;&#x5305;</h3>
+<p>&#x6709;&#x4E9B;&#x5BB9;&#x5668;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x5B89;&#x88C5;tcpdump&#xFF0C;&#x53C8;&#x4E0D;&#x592A;&#x65B9;&#x4FBF;&#x5B89;&#x88C5;&#x3002;&#x53EF;&#x4EE5;&#x5207;&#x6362;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5BBF;&#x4E3B;&#x673A;&#x4E0A;&#x6293;&#x3002;
+&#x53C2;&#x8003;&#xFF1A;<a href="https://tencentcloudcontainerteam.github.io/2019/05/19/capture-packets-in-container/" target="_blank">https://tencentcloudcontainerteam.github.io/2019/05/19/capture-packets-in-container/</a></p>
+<p>&#x6211;&#x4EEC;&#x5B9E;&#x9645;&#x6293;&#x5305;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;
+<strong>1.&#x5728;rancher ui &#x4E0B;&#x627E;&#x5230;&#x4F60;&#x8981;&#x6293;&#x7684;&#x5BB9;&#x5668;name</strong>
+<img src="assets/x.jpg" alt="">
+&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x6293;&#x7B2C;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;name&#x4E3A;<code>gateway-59d9dcb46c-psfx</code>
+<strong>2.&#x5728;&#x76F8;&#x5E94;&#x5BBF;&#x4E3B;&#x673A;172.17.40.205&#x8FD9;&#x53F0;&#x673A;&#x5B50;&#x4E0A;&#x53BB;</strong><code>docker ps -a</code>&#x5217;&#x51FA;&#x6240;&#x6709;&#x5B9E;&#x4F8B;</p>
+<p><img src="assets/2.jpg" alt=""></p>
+<p>&#x627E;&#x5230;&#x524D;&#x7F00;&#x5E26;POD&#x7684;&#x5B9E;&#x4F8B;ID:<code>b3ea998c31a0</code></p>
+<p><strong>3.&#x6700;&#x540E;&#x6309;&#x53C2;&#x8003;&#x94FE;&#x63A5;&#x6B65;&#x9AA4;</strong></p>
+<p>&#x83B7;&#x5F97;&#x5BB9;&#x5668;&#x8FDB;&#x7A0B;&#x7684; pid</p>
+<pre><code>docker inspect -f {{.State.Pid}}  b3ea998c31a0
+</code></pre><p>&#x8FDB;&#x5165;&#x8BE5;&#x5BB9;&#x5668;&#x7684; network namespace</p>
+<pre><code>nsenter -n --target 25134
+</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF1A; &#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#x6293;&#x5305;&#x5B8C;&#x540E;&#x5982;&#x4F55;&#x5207;&#x6362;&#x7F51;&#x7EDC;&#x7A7A;&#x95F4;&#x56DE;&#x53BB;&#xFF0C;&#x518D;&#x6B21;&#x767B;&#x9646;shell&#x65F6;&#xFF0C;&#x7A7A;&#x95F4;&#x4F1A;&#x6062;&#x590D;&#x4E3A;&#x5BBF;&#x4E3B;&#x9ED8;&#x8BA4;&#x7684;&#x7A7A;&#x95F4;&#x3002;</strong></p>
+<h1 id="wireshark&#x5206;&#x6790;">wireshark&#x5206;&#x6790;</h1>
+<h3 id="&#x6839;&#x636E;http&#x8BF7;&#x6C42;url&#xFF0C;&#x67E5;&#x627E;&#x5305;">&#x6839;&#x636E;http&#x8BF7;&#x6C42;url&#xFF0C;&#x67E5;&#x627E;&#x5305;</h3>
+<p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x7528;postman&#x53D1;&#x9001;&#x4E86;&#x4E00;&#x4E2A;get&#x8BF7;&#x6C42;url&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>http://127.0.0.1:30004/pick/keywords/enumConfig?xxx=104
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;query&#x53C2;&#x6570;&#x5E26;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x6807;&#x8BC6;&#xFF0C;&#x4EE5;&#x4FBF;&#x6211;&#x4EEC;&#x8FFD;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x5E26;&#x4E86;<code>xxx=104</code>.</p>
+<h4 id="&#x4E24;&#x6B65;&#x9501;&#x5B9A;&#x5305;">&#x4E24;&#x6B65;&#x9501;&#x5B9A;&#x5305;</h4>
+<p><img src="assets/4.jpg" alt=""></p>
+<ol>
+<li><p>&#x6211;&#x4EEC;&#x5148;&#x70B9;&#x51FB;Protocol&#x6392;&#x5E8F;&#xFF0C;&#x5C06;http&#x534F;&#x8BAE;&#x6392;&#x524D;&#x9762;&#x3002;(&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD9;&#x6B65;&#xFF0C;&#x4F60;&#x641C;&#x5230;&#x4E86;&#x7ED3;&#x679C;&#xFF0C;&#x53EF;&#x80FD;&#x5728;&#x540E;&#x9762;&#x5F88;&#x8FDC;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x597D;&#x5C55;&#x793A;&#xFF09;&#xFF0C;mac &#x4E3A;&#x4F8B;command+F &#x76F4;&#x63A5;&#x641C;&#x7D22;&#x5173;&#x952E;&#x5B57;<code>xxx</code>&#x3002;&#x8FD9;&#x91CC;&#xFF0C;&#x4F60;&#x4E0D;&#x4F46;&#x53EF;&#x4EE5;&#x641C;&#x4F60;&#x81EA;&#x5DF1;&#x6807;&#x8BB0;&#x7684;&#x5173;&#x952E;&#x5B57;&#x3002;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x641C;&#x4EFB;&#x4F55;&#x503C;&#x3002;&#x6BD4;&#x5982;&#x4E0B;&#x56FE;&#x4E2D;&#xFF0C;info &#x5217;&#x91CC;&#x7684;&#x7AEF;&#x53E3;<code>5610</code>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x641C;&#x3002;&#xFF08;&#x4E3A;&#x5565;&#x8981;&#x5F3A;&#x8C03;&#x8FD9;&#x4E2A;&#x5462;&#xFF1F;&#x6BD4;&#x5982;&#x5728;docker &#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x76D1;&#x542C;&#x7AEF;&#x53E3;&#x662F;30004&#xFF0C;&#x5BF9;&#x5916;&#x6620;&#x5C04;&#x66B4;&#x9732;&#x7684;&#x5BBF;&#x4E3B;&#x7AEF;&#x53E3;&#x662F;8081&#x3002;&#x6B64;&#x65F6;&#x4F60;&#x9700;&#x8981;tcpdump &#x4E24;&#x4E2A;&#x5730;&#x65B9;&#x3002;8081&#x6536;&#x5230;&#x4E86;http&#x5305;&#xFF0C;&#x6070;&#x597D;&#x4F60;30004&#x6CA1;&#x6709;&#x6536;&#x5230;http&#x534F;&#x8BAE;&#x8FD9;&#x4E2A;&#x5305;&#xFF0C;&#x4F60;&#x5C06;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x641C;&#x7D22;<code>xxx</code>&#x5C06;&#x4E24;&#x8FB9;&#x8FDE;&#x8D77;&#x6765;&#x3002;&#x552F;&#x4E00;&#x5173;&#x8054;&#x7684;&#x53EF;&#x80FD;&#x662F;&#x7AEF;&#x53E3;&#xFF09;</p>
+</li>
+<li><p>&#x53F3;&#x952E;follow
+<img src="assets/5.jpg" alt="">
+&#x5C06;&#x4F1A;&#x5C55;&#x793A;&#x6211;&#x4EEC;&#x8FD9;&#x6B21;&#x8BF7;&#x6C42;&#x76F8;&#x5173;&#x8054;&#x7684;&#x6240;&#x6709;&#x5305;</p>
+</li>
+</ol>
+<h3 id="&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x5C0F;&#x6280;&#x5DE7;">&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x5C0F;&#x6280;&#x5DE7;</h3>
+<p>&#x770B;&#x5230;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x5217;&#x53EB;<code>Delta</code>&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x6CA1;&#x6709;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x4F60;&#x8BBE;&#x7F6E;&#x4E0B;&#xFF08;&#x6211;&#x4EEC;&#x4E0D;&#x5C55;&#x5F00;&#xFF09;&#x3002;&#x8FD9;&#x5217;&#x542B;&#x4E49;&#x6307;&#x7684;&#x662F;&#x524D;&#x540E;&#x4E24;&#x4E2A;&#x5305;&#x5230;&#x8FBE;&#x6216;&#x8005;&#x53D1;&#x9001;&#x7684;&#x95F4;&#x9694;&#x65F6;&#x95F4;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x79D2;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x5206;&#x6790;&#x5305;&#x65F6;&#x95F4;&#x5F88;&#x6709;&#x5E2E;&#x52A9;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -941,7 +978,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.2.tcpdum+wireshark抓包分析","level":"1.8.5","depth":2,"next":{"title":"3.3.mtu不一致导致丢包","level":"1.8.6","depth":2,"path":"33mtubu-yi-zhi-dao-zhi-diu-bao.md","ref":"33mtubu-yi-zhi-dao-zhi-diu-bao.md","articles":[]},"previous":{"title":"3.1.linux系统调优","level":"1.8.4","depth":2,"path":"31linuxxi-tong-diao-you.md","ref":"31linuxxi-tong-diao-you.md","articles":[]},"dir":"neutral"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"disqus":{"useIdentifier":false,"shortName":"css3io"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"32tcpdum+wiresharkzhua-bao-fen-xi.md","mtime":"2020-04-28T03:42:14.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-28T03:43:17.462Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.2.tcpdum+wireshark抓包分析","level":"1.8.5","depth":2,"next":{"title":"3.3.mtu不一致导致丢包","level":"1.8.6","depth":2,"path":"33mtubu-yi-zhi-dao-zhi-diu-bao.md","ref":"33mtubu-yi-zhi-dao-zhi-diu-bao.md","articles":[]},"previous":{"title":"3.1.linux系统调优","level":"1.8.4","depth":2,"path":"31linuxxi-tong-diao-you.md","ref":"31linuxxi-tong-diao-you.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"disqus":{"useIdentifier":false,"shortName":"css3io"},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"32tcpdum+wiresharkzhua-bao-fen-xi.md","mtime":"2020-05-04T09:09:11.491Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T09:10:12.738Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
