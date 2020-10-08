@@ -989,10 +989,8 @@ cat /proc/sys/net/ipv4/tcp_max_syn_backlog
 cat /proc/sys/net/core/somaxconn 
 # &#x4FEE;&#x6539;
 sysctl -w net.core.somaxconn=1024 &#x6216; echo 1024 &gt; /proc/sys/net/core/somaxconn
-</code></pre><p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x5BB9;&#x5668;&#xFF0C;&#x4F60;&#x4E00;&#x5B9A;&#x8981;&#x6CE8;&#x610F;&#x4E86;&#xFF0C;&#x5F97;&#x53BB;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x67E5;&#x770B;&#x6216;&#x4FEE;&#x6539;&#x3002;
-&#x4FEE;&#x6539;&#x5B8C;&#x4E86;&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x4E5F;&#x4E0D;&#x4E00;&#x5B9A;&#x4F60;&#x7684;&#x961F;&#x5217;&#x5C31;&#x8FD9;&#x4E48;&#x5927;&#x4E86;&#x3002;&#x56E0;&#x4E3A;&#x5728;&#x7528;&#x6237;&#x5C42;&#x8FD8;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#xFF0C;&#x5C31;&#x662F;new Socket&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;<code>backlog</code> &#x53C2;&#x6570;&#x3002;<code>backlog</code>&#x7684;&#x503C;&#x4E0E;&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x53D6;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x4F5C;&#x4E3A;&#x771F;&#x5B9E;&#x7684;&#x961F;&#x5217;&#x503C;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;nginx=511&#xFF0C;nodejs=511&#xFF0C;tomact=100&#x3002;&#x4F46;&#x662F;&#x7CFB;&#x7EDF;somaxconn&#x9ED8;&#x8BA4;&#x4E3A;128&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x8C03;&#x6574;&#x7684;&#x8BDD;&#xFF0C;&#x5F88;&#x5927;&#x6982;&#x7387;&#x4F60;&#x7684;&#x961F;&#x5217;&#x6700;&#x5927;&#x503C;&#x4E3A;128&#x6216;100&#x3002;</p>
-<p><strong>&#x786E;&#x5B9A;&#x751F;&#x6548;</strong>
-&#x53E6;&#x5916;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x8BBE;&#x7F6E;&#x4E86;&#x9700;&#x8981;&#x91CD;&#x542F;&#x5E94;&#x7528;&#x624D;&#x4F1A;&#x751F;&#x6548;&#x3002;&#x90A3;&#x5982;&#x4F55;&#x68C0;&#x9A8C;&#x8FD9;&#x4E2A;&#x961F;&#x5217;&#x6700;&#x5927;&#x503C;&#x662F;&#x5426;&#x6210;&#x529F;&#x8BBE;&#x7F6E;&#x5462;&#xFF1F;</p>
+</code></pre><p>&#x5982;&#x679C;&#x4F60;&#x662F;&#x5BB9;&#x5668;&#xFF0C;&#x4F60;&#x4E00;&#x5B9A;&#x8981;&#x6CE8;&#x610F;&#x4E86;&#xFF0C;&#x5F97;&#x53BB;&#x5BB9;&#x5668;&#x91CC;&#x9762;&#x67E5;&#x770B;&#x6216;&#x4FEE;&#x6539;&#x3002;<br>&#x4FEE;&#x6539;&#x5B8C;&#x4E86;&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x4E5F;&#x4E0D;&#x4E00;&#x5B9A;&#x4F60;&#x7684;&#x961F;&#x5217;&#x5C31;&#x8FD9;&#x4E48;&#x5927;&#x4E86;&#x3002;&#x56E0;&#x4E3A;&#x5728;&#x7528;&#x6237;&#x5C42;&#x8FD8;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#xFF0C;&#x5C31;&#x662F;new Socket&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;<code>backlog</code> &#x53C2;&#x6570;&#x3002;<code>backlog</code>&#x7684;&#x503C;&#x4E0E;&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x53D6;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x4F5C;&#x4E3A;&#x771F;&#x5B9E;&#x7684;&#x961F;&#x5217;&#x503C;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;nginx=511&#xFF0C;nodejs=511&#xFF0C;tomact=100&#x3002;&#x4F46;&#x662F;&#x7CFB;&#x7EDF;somaxconn&#x9ED8;&#x8BA4;&#x4E3A;128&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x8C03;&#x6574;&#x7684;&#x8BDD;&#xFF0C;&#x5F88;&#x5927;&#x6982;&#x7387;&#x4F60;&#x7684;&#x961F;&#x5217;&#x6700;&#x5927;&#x503C;&#x4E3A;128&#x6216;100&#x3002;</p>
+<p><strong>&#x786E;&#x5B9A;&#x751F;&#x6548;</strong><br>&#x53E6;&#x5916;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4F60;&#x8BBE;&#x7F6E;&#x4E86;&#x9700;&#x8981;&#x91CD;&#x542F;&#x5E94;&#x7528;&#x624D;&#x4F1A;&#x751F;&#x6548;&#x3002;&#x90A3;&#x5982;&#x4F55;&#x68C0;&#x9A8C;&#x8FD9;&#x4E2A;&#x961F;&#x5217;&#x6700;&#x5927;&#x503C;&#x662F;&#x5426;&#x6210;&#x529F;&#x8BBE;&#x7F6E;&#x5462;&#xFF1F;</p>
 <pre><code>ss -lnt
 
 State      Recv-Q Send-Q Local Address:Port               Peer Address:Port
@@ -1023,15 +1021,16 @@ import (
     &quot;fmt&quot;
     &quot;net&quot;
     &quot;os&quot;
-    //&quot;time&quot;
+    &quot;time&quot;
 )
 
 const (
-    CONN_HOST = &quot;localhost&quot;
-    CONN_PORT = &quot;3333&quot;
+    CONN_HOST = &quot;0.0.0.0&quot;
+    CONN_PORT = &quot;8080&quot;
     CONN_TYPE = &quot;tcp&quot;
 )
 
+var count int
 func main() {
     // Listen for incoming connections.
     l, err := net.Listen(CONN_TYPE, CONN_HOST+&quot;:&quot;+CONN_PORT)
@@ -1043,7 +1042,9 @@ func main() {
     defer l.Close()
     fmt.Println(&quot;Listening on &quot; + CONN_HOST + &quot;:&quot; + CONN_PORT)
     for {
-        //time.Sleep(1000)
+        fmt.Println(&quot;reading===111111111111&quot;)
+        time.Sleep(time.Duration(50)*time.Millisecond)
+        fmt.Println(&quot;reading===2222222222222&quot;)
         // Listen for an incoming connection.
         conn, err := l.Accept()
         if err != nil {
@@ -1055,8 +1056,11 @@ func main() {
     }
 }
 
+
 // Handles incoming requests.
 func handleRequest(conn net.Conn) {
+        count++
+    fmt.Println(&quot;reading===%d&quot;, count)
   // Make a buffer to hold incoming data.
   buf := make([]byte, 1024)
   // Read the incoming connection into the buffer.
@@ -1065,9 +1069,9 @@ func handleRequest(conn net.Conn) {
     fmt.Println(&quot;Error reading:&quot;, err.Error(), reqLen)
   }
   // Send a response back to person contacting us.
-  conn.Write([]byte(&quot;Message received.&quot;))
+  conn.Write([]byte(&quot;HTTP/1.1 200 OK\nContent-Type:application/json; charset=utf-8\nContent-Length:2\n\r\nok&quot;))
   // Close the connection when you&apos;re done with it.
-  conn.Close()
+  //conn.Close()
 }
 </code></pre><h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
 <p>&#x5982;&#x679C;&#x4F60;&#x7684;somaxconn&#x8BBE;&#x7F6E;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x67E5;&#x770B;&#xFF0C;&#x5982;&#x679C;&#x4E22;&#x5305;&#x591A;&#xFF0C;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;sommaxconn&#x5F15;&#x8D77;&#x3002;&#x5F53;&#x7136;&#x5177;&#x4F53;&#x539F;&#x56E0;&#x5F97;&#x5177;&#x4F53;&#x5206;&#x6790;&#x3002;</p>
@@ -1082,16 +1086,10 @@ func handleRequest(conn net.Conn) {
 sysctl -w net.core.rmem_default=8388608
 </code></pre><p>&#x91CD;&#x8981;&#x7684;&#x662F;&#x7CFB;&#x7EDF;&#x53C2;&#x6570;&#x8C03;&#x6574;&#x540E;&#xFF0C;&#x786E;&#x4FDD;&#x751F;&#x6548;&#x7684;&#x624B;&#x6BB5;&#xFF0C;&#x8BB0;&#x4F4F;<code>ss -lnt</code> &#x547D;&#x4EE4;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x5B9E;&#x6218;&#x4E2D;&#xFF0C;&#x5C31;&#x9047;&#x5230;&#x4E86;&#x5BBF;&#x4E3B;&#x673A;&#x8C03;&#x4E86;&#xFF0C;&#x5BB9;&#x5668;&#x6CA1;&#x540C;&#x6B65;&#x3002;&#x5BB9;&#x5668;&#x540C;&#x6B65;&#x4E86;&#xFF0C;&#x5E94;&#x7528;&#x6CA1;&#x91CD;&#x542F;&#xFF0C;&#x5E94;&#x7528;&#x672C;&#x8EAB;backlog&#x4E5F;&#x9700;&#x8981;&#x8C03;&#x5927;&#x8FD9;&#x4E9B;&#x5751;&#x3002;&#x5F97;&#x6E05;&#x695A;&#x7406;&#x89E3;tcp&#x662F;&#x7CFB;&#x7EDF;&#x5185;&#x6838;&#x7EF4;&#x62A4;&#x7684;&#xFF0C;accept &#x8FD9;&#x79CD;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x5BF9;accept &#x5168;&#x8FDE;&#x63A5;&#x961F;&#x5217;&#x7684;&#x5F71;&#x54CD;&#x7B49;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x3002;</p>
 <h1 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h1>
-<p>TCP SYN flood&#x6D2A;&#x6C34;&#x653B;&#x51FB;&#x539F;&#x7406;&#x548C;&#x9632;&#x5FA1;&#x7834;&#x89E3;
-<a href="https://www.cnblogs.com/sunsky303/p/11811097.html" target="_blank">https://www.cnblogs.com/sunsky303/p/11811097.html</a></p>
-<p>&#x5206;&#x6790;&#x5168;&#x961F;&#x5217;&#xFF0C;&#x548C;&#x534A;&#x961F;&#x5217; &#x5177;&#x4F53;&#x5206;&#x6790;
-<a href="http://jm.taobao.org/2017/05/25/525-1/" target="_blank">http://jm.taobao.org/2017/05/25/525-1/</a>
-<a href="https://cjting.me/2019/08/28/tcp-queue/" target="_blank">https://cjting.me/2019/08/28/tcp-queue/</a></p>
-<p>&#x5185;&#x6838;&#x6E90;&#x7801;&#x5206;&#x6790;
-<a href="https://my.oschina.net/moooofly/blog/666048" target="_blank">https://my.oschina.net/moooofly/blog/666048</a></p>
-<p>&#x534F;&#x8BAE;&#x6808;&#x8BFB;&#x5199;&#x5185;&#x5B58;&#x6EA2;&#x51FA;
-<a href="https://serverfault.com/questions/757305/what-does-syns-to-listen-sockets-dropped-from-netstat-s-mean" target="_blank">https://serverfault.com/questions/757305/what-does-syns-to-listen-sockets-dropped-from-netstat-s-mean</a>
-<a href="https://www.cyberciti.biz/faq/linux-tcp-tuning/" target="_blank">https://www.cyberciti.biz/faq/linux-tcp-tuning/</a></p>
+<p>TCP SYN flood&#x6D2A;&#x6C34;&#x653B;&#x51FB;&#x539F;&#x7406;&#x548C;&#x9632;&#x5FA1;&#x7834;&#x89E3;<br><a href="https://www.cnblogs.com/sunsky303/p/11811097.html" target="_blank">https://www.cnblogs.com/sunsky303/p/11811097.html</a></p>
+<p>&#x5206;&#x6790;&#x5168;&#x961F;&#x5217;&#xFF0C;&#x548C;&#x534A;&#x961F;&#x5217; &#x5177;&#x4F53;&#x5206;&#x6790;<br><a href="http://jm.taobao.org/2017/05/25/525-1/" target="_blank">http://jm.taobao.org/2017/05/25/525-1/</a><br><a href="https://cjting.me/2019/08/28/tcp-queue/" target="_blank">https://cjting.me/2019/08/28/tcp-queue/</a></p>
+<p>&#x5185;&#x6838;&#x6E90;&#x7801;&#x5206;&#x6790;<br><a href="https://my.oschina.net/moooofly/blog/666048" target="_blank">https://my.oschina.net/moooofly/blog/666048</a></p>
+<p>&#x534F;&#x8BAE;&#x6808;&#x8BFB;&#x5199;&#x5185;&#x5B58;&#x6EA2;&#x51FA;<br><a href="https://serverfault.com/questions/757305/what-does-syns-to-listen-sockets-dropped-from-netstat-s-mean" target="_blank">https://serverfault.com/questions/757305/what-does-syns-to-listen-sockets-dropped-from-netstat-s-mean</a><br><a href="https://www.cyberciti.biz/faq/linux-tcp-tuning/" target="_blank">https://www.cyberciti.biz/faq/linux-tcp-tuning/</a></p>
 
                                 
                                 </section>
@@ -1119,7 +1117,7 @@ sysctl -w net.core.rmem_default=8388608
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1.linux系统调优","level":"1.8.4","depth":2,"next":{"title":"3.2.tcpdum+wireshark抓包分析","level":"1.8.5","depth":2,"path":"32tcpdum+wiresharkzhua-bao-fen-xi.md","ref":"32tcpdum+wiresharkzhua-bao-fen-xi.md","articles":[]},"previous":{"title":"3.记容器mtu引发的低概率502问题追踪","level":"1.8.3","depth":2,"path":"rong-qi-mtu-yin-fa-de-fu-wu-di-gai-lv-502-wen-ti-zhui-zong.md","ref":"rong-qi-mtu-yin-fa-de-fu-wu-di-gai-lv-502-wen-ti-zhui-zong.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap","disqus","timeline"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"disqus":{"useIdentifier":false,"shortName":"css3io"},"timeline":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"31linuxxi-tong-diao-you.md","mtime":"2020-06-11T03:26:38.295Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-11T03:27:41.608Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.1.linux系统调优","level":"1.8.4","depth":2,"next":{"title":"3.2.tcpdum+wireshark抓包分析","level":"1.8.5","depth":2,"path":"32tcpdum+wiresharkzhua-bao-fen-xi.md","ref":"32tcpdum+wiresharkzhua-bao-fen-xi.md","articles":[]},"previous":{"title":"3.记容器mtu引发的低概率502问题追踪","level":"1.8.3","depth":2,"path":"rong-qi-mtu-yin-fa-de-fu-wu-di-gai-lv-502-wen-ti-zhui-zong.md","ref":"rong-qi-mtu-yin-fa-de-fu-wu-di-gai-lv-502-wen-ti-zhui-zong.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","baidu_gio","-search","-lunr","-sharing","sitemap","disqus","timeline"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"configuration":{"cookieName":"www.css3.io","cookieDomain":"www.css3.io"},"token":"UA-48397157-2"},"baidu_gio":{"token":"3b06928c84dad0b03dc0fdca98e190c9"},"sitemap":{"hostname":"https://www.css3.io/"},"disqus":{"useIdentifier":false,"shortName":"css3io"},"timeline":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"cocoo前端笔记","links":{"sidebar":{"www.css3.io":"https://www.css3.io"}},"gitbook":"*","description":"cocoo前端笔记(www.css3.io)是李俊(8427003@qq.com)个人技术blog"},"file":{"path":"31linuxxi-tong-diao-you.md","mtime":"2020-10-08T01:31:53.845Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-08T01:33:00.957Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
